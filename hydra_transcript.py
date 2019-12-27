@@ -3,7 +3,7 @@
 
 ### Ideas for tests
 
-# has a spreadsheet been created
+# has a spreadsheet been created - working so far
 # Has the date/time been created and placed in column 
 # Has the title been placed in column
 # Has the phrase "search term" been created and placed in column
