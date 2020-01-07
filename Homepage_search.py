@@ -14,6 +14,8 @@
 #Fuck yeah! sucess!!! I used the click() method and pinpointed the elements using xpath
 #The element's xpaths can be copied in the developer window after selecting them. 
 
+#next, sectecting one gene id link and putting that link name in a spreadsheet. make this a separate method
+
 import time
 
 from selenium import webdriver
@@ -31,10 +33,26 @@ except:
 
 searchElem.send_keys('ig')
 #Click on the search button to activate search. 
-browser.find_element_by_xpath('/html/body/div[3]/form/table[4]/tbody/tr[2]/td[5]/input[2]').click()
-  
+buttonPress = browser.find_element_by_xpath('/html/body/div[3]/form/table[4]/tbody/tr[2]/td[5]/input[2]').click()
+
+resultElms = browser.find_element_by_xpath("/html/body/div[3]/table[3]/tbody/tr/td[1]/form/table[1]/tbody/tr[3]/td[2]/a").click()  
+
+# Search result
+# Select a link and click it. - seems like it will be easier to clean up the resulting link
+#browser.find_element_by_tag_name('a')
+
+try:
+	resultElms = browser.find_element_by_xpath("/html/body/div[3]/table[3]/tbody/tr/td[1]/form/table[1]/tbody/tr[3]/td[2]/a").click()
+	print ('Found elements')
+	
+except:
+    print('Was not able to find element with that name.')
+
+#https://research.nhgri.nih.gov/hydra/jbrowse/display_jbrowse.cgi?loc=Sc4wPfr_1127.1%3A428978..461136&tracks=augustus%2Cscaffold&highlight=
+time.sleep(5) # This allows me a good amount of time to look at the results before closing browser. 
+browser.close() # If I don't close the browser, they pile up
+
+target = "_blank"
 
 
-#time.sleep(10) # This allows me a good amount of time to look at the results before closing browser. 
-#browser.close() # If I don't close the browser, they pile up
-#quit()
+
