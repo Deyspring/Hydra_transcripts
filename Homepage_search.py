@@ -16,6 +16,15 @@
 
 #next, sectecting one gene id link and putting that link name in a spreadsheet. make this a separate method
 
+#After doing some reading I realized that my xpaths are absolute and should be changed to relative. 
+#I'm trying to figure out the best way to select the gene id name, which does not have a tag or id attached to it. 
+#This may require a chained? xpath. Xpaths are going to be my main way of finding elements on this website. :P 
+# First, change absolute links to relative ones. 
+#Ok, I tried to change the absolute links to relative ones and that did not work. The relative link would not allow a keyword to be entered into the search bar, for instance. 
+
+#An unsatisfying day of coding, however while cleaning up my project space I realized that I'd entirely forgotten about using 
+#an API to get the table data and gene fragments. Tomorrow's quest then. 
+
 import time
 
 from selenium import webdriver
@@ -25,34 +34,41 @@ browser = webdriver.Firefox()
 browser.get('https://research.nhgri.nih.gov/hydra/pfam/')
 
 try:
-	searchElem = browser.find_element_by_xpath('/html/body/div[3]/form/table[4]/tbody/tr[2]/td[5]/input[1]')
-    #print('Found element with that class name!')
-   
+	keywordElem = browser.find_element_by_xpath('/html/body/div[3]/form/table[4]/tbody/tr[2]/td[5]/input[1]')
+	print('Found keywordElem with that xpath!')
 except:
-    print('Was not able to find element with that name.')
+    print('Was not able to find keywordElem.')
 
-searchElem.send_keys('ig')
-#Click on the search button to activate search. 
-buttonPress = browser.find_element_by_xpath('/html/body/div[3]/form/table[4]/tbody/tr[2]/td[5]/input[2]').click()
+keywordElem.send_keys('ig')
 
-resultElms = browser.find_element_by_xpath("/html/body/div[3]/table[3]/tbody/tr/td[1]/form/table[1]/tbody/tr[3]/td[2]/a").click()  
-
-# Search result
-# Select a link and click it. - seems like it will be easier to clean up the resulting link
-#browser.find_element_by_tag_name('a')
-
+#Click on the search button  
 try:
-	resultElms = browser.find_element_by_xpath("/html/body/div[3]/table[3]/tbody/tr/td[1]/form/table[1]/tbody/tr[3]/td[2]/a").click()
-	print ('Found elements')
-	
+	buttonPress = browser.find_element_by_xpath('/html/body/div[3]/form/table[4]/tbody/tr[2]/td[5]/input[2]').click()
+	print ('Found buttonPress with that xpath')
 except:
-    print('Was not able to find element with that name.')
+    print('Was not able to find buttonPress.')
 
-#https://research.nhgri.nih.gov/hydra/jbrowse/display_jbrowse.cgi?loc=Sc4wPfr_1127.1%3A428978..461136&tracks=augustus%2Cscaffold&highlight=
-time.sleep(5) # This allows me a good amount of time to look at the results before closing browser. 
+# Click on gene id link returned by search 
+try:
+	resultElms = browser.find_element_by_xpath('/html/body/div[3]/table[3]/tbody/tr/td[1]/form/table[1]/tbody/tr[3]/td[2]/a').click()
+	print ('Found resultElms with that xpath')	
+except:
+    print('Was not able to find resultElms.')
+
+# Get gene name from result on sequence page
+try:
+	geneName = browser.find_element_by_xpath('/html/body/div[3]/h1[1]/i')
+	print ('geneName')	
+except:
+    print('Was not able to find geneName')
+
+
+
+
+#time.sleep(5) # This allows me a good amount of time to look at the results before closing browser. 
 browser.close() # If I don't close the browser, they pile up
 
-target = "_blank"
+#target = "_blank"
 
 
 
