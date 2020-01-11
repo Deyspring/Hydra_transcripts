@@ -37,15 +37,12 @@ except:
     print('Was not able to find resultElms.')
 
 ###Gene page: window_second
+time.sleep(5) # This is crucial!!! If the browser does not have time to load the second page, the handle will not be reset to the correct page. 
+window_second = browser.window_handles[1] # After clicking the result button, store the window handle variable of second page
+browser.switch_to.window(window_second)
 print("window_second")
 
 # Get gene name from result on sequence page
-try:
-	resultElms = browser.find_element_by_xpath('/html/body/div[3]/table[3]/tbody/tr/td[1]/form/table[1]/tbody/tr[3]/td[2]/a')
-	
-	print ('Found resultElms with that xpath again')	
-except:
-    print('Was not able to find resultElms again')
 try:
 	geneLink = browser.find_element_by_link_text('View Gene in Genome Browser').click() 
 	print ('Found geneLink with that xpath')
@@ -53,18 +50,20 @@ except:
     print('Was not able to find geneLink')
 
 ###Gene Browser : window_third
+time.sleep(5)
 window_third = browser.window_handles[2]
 browser.switch_to.window(window_third)
 print('window_third') 
 
+time.sleep(5)# time.sleep is my new friend. Letting things load first has solved so many problems. 
 try:
 	JulianoCheckbox = browser.find_element_by_xpath('/html/body/div[2]/div[4]/div[5]/div[2]/div/div/label[2]/input') 
 	print ('Found JulianoCheckbox')	
 except:
     print('Was not able to find JulianoCheckbox')
  
-#time.sleep(5) 
-#browser.close()
+time.sleep(5) 
+browser.close()
 
 #/html/body/div[2]/div[2]/div/div/div[1]/div/div[4]/div[3]/div[2] Juliano track button xpath
 #target = "_blank"
