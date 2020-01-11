@@ -57,13 +57,25 @@ print('window_third')
 
 time.sleep(5)# time.sleep is my new friend. Letting things load first has solved so many problems. 
 try:
-	JulianoCheckbox = browser.find_element_by_xpath('/html/body/div[2]/div[4]/div[5]/div[2]/div/div/label[2]/input') 
+	JulianoCheckbox = browser.find_element_by_xpath('/html/body/div[2]/div[4]/div[5]/div[2]/div/div/label[2]/input').click()
 	print ('Found JulianoCheckbox')	
 except:
     print('Was not able to find JulianoCheckbox')
+
+ # Juiano menu xpath
+ #/html/body/div[2]/div[2]/div/div/div[1]/div/div[4]/div[3]/div[2]
+
+# Dropdown menu mystery 
+ #/html/body/div[10]/div[2]/form/fieldset[1]/div[2]/input 
  
 time.sleep(5) 
 browser.close()
+browser.switch_to.window(window_second)
+browser.close()
+browser.switch_to.window(window_first)
+browser.close()
+
+
 
 #/html/body/div[2]/div[2]/div/div/div[1]/div/div[4]/div[3]/div[2] Juliano track button xpath
 #target = "_blank"
