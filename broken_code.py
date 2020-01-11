@@ -9,10 +9,8 @@ from selenium import webdriver
 browser = webdriver.Firefox()
 browser.get('https://research.nhgri.nih.gov/hydra/pfam/')
 
-###Home page: window_first
-window_first = browser.window_handles[0] # Store the window handle variable before clicking any links
-print("window_first")
 
+#Home page:Tab 1?
 try:
 	keywordElem = browser.find_element_by_xpath('/html/body/div[3]/form/table[4]/tbody/tr[2]/td[5]/input[1]')
 	print('Found keywordElem with that xpath!')
@@ -32,34 +30,34 @@ except:
 #Click on gene id link returned by search 
 try:
 	resultElms = browser.find_element_by_xpath('/html/body/div[3]/table[3]/tbody/tr/td[1]/form/table[1]/tbody/tr[3]/td[2]/a').click()
+	window_before = browser.window_handles[0]
+	print("window_before")
 	print ('Found resultElms with that xpath')	
 except:
     print('Was not able to find resultElms.')
 
-###Gene page: window_second
-print("window_second")
-
+#time.sleep(5) # This allows me a good amount of time to look at the results before closing browser. 
+#browser.close()
+window_after = browser.window_handles[1]
+browser.switch_to.window(window_after)
+#Gene page: Tab 2? 
 # Get gene name from result on sequence page
 try:
-	resultElms = browser.find_element_by_xpath('/html/body/div[3]/table[3]/tbody/tr/td[1]/form/table[1]/tbody/tr[3]/td[2]/a')
-	
-	print ('Found resultElms with that xpath again')	
-except:
-    print('Was not able to find resultElms again')
-try:
 	geneLink = browser.find_element_by_link_text('View Gene in Genome Browser').click() 
+	window_after_that = browser.window_handles[2]
+	print('window_after_that')
 	print ('Found geneLink with that xpath')
 except:
     print('Was not able to find geneLink')
 
-###Gene Browser : window_third
-window_third = browser.window_handles[2]
-browser.switch_to.window(window_third)
-print('window_third') 
 
+browser.switch_to.window(window_after_that)
+
+# Gene Browser : Tab 3? 
 try:
 	JulianoCheckbox = browser.find_element_by_xpath('/html/body/div[2]/div[4]/div[5]/div[2]/div/div/label[2]/input') 
 	print ('Found JulianoCheckbox')	
+
 except:
     print('Was not able to find JulianoCheckbox')
  

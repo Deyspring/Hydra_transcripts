@@ -15,24 +15,22 @@
 # Has the GOI been entered into the search box? 
 
 
-https://selenium-python.readthedocs.io/navigating.html#filling-in-forms
-Filling in the forms by entering in a keyword and activating the search button with a virtual click
-<input type="text" name="keyword" id="keyword" value="" size="42" autocomplete="off" onkeyup="ajax_showOptions(this,'getDomainsByLetters',event)">
+############   To find the individual transcripts using API. ############
 
-References: 
-https://selenium-python.readthedocs.io/navigating.html#filling-in-forms
+-Go to the Tracks descriptions page, Check Juliano-aepLRv2. Uncheck everything else. 
 
-# Have the genes of interest been stripped and entered into a dictionary with the original ids? 
-How do you select each item individually on that list and get the list of transcripts? 
-Once the gene identifier is selected, how do you select the list of transcript names? 
+-Go to developer tools and check networks tab then filter by XHR. Refresh the page to see the json info
+-Look on left for trackData.json and click on it to find the names and symbol numbers of the tracks you're interested in. 
 
-## To find the individual transcripts##
-Go to the Tracks descriptions page, uncheck all of the boxes on the left that are not concerned with the gene of interest. 
-Go to developer tools and check networks tab then filter by XHR. 
-Look on left for trackData.json and click on it to find the names and symbol numbers of the tracks you're interested in. 
+-Click on Headers to find the Request URL 
 
-#Is the transcript code stripped?  
-	character code starting with t and ending before | (ie."t9735aep" from  Symbol:   t9735aep|92125)
+This is the request url, which will produce different data every time. 
+https://research.nhgri.nih.gov/hydra/jbrowse/data/tracks/aepLRv2_splign/Sc4wPfr_1127.1/trackData.json
+
+-create a line to grab every line in the json file of the format "gene.t38613aep|23824"
+- strip off the quotes and the gene. parts. 
+- This is your transcript type t9735aep|92125
+- There may be duplicate gene mentions, so check your database. 
 
 # If there are no transcripts found, is "none" written in the column 
 
@@ -41,28 +39,36 @@ Is the transcript code listed next to the transcript name? (Column/row config to
                  t20369aep      None
                  t9735aep
 
+Reference tutorial
+http://www.gregreda.com/2015/02/15/web-scraping-finding-the-api/
 
 #### 
 
-Dependencies 
 
-This module must be installed at the command line: openpyxl 
+https://selenium-python.readthedocs.io/navigating.html#filling-in-forms
+Filling in the forms by entering in a keyword and activating the search button with a virtual click
+<input type="text" name="keyword" id="keyword" value="" size="42" autocomplete="off" onkeyup="ajax_showOptions(this,'getDomainsByLetters',event)">
+
+References: 
+https://selenium-python.readthedocs.io/navigating.html#filling-in-forms
+
+
+######################################
+Spreadsheet module
+
+This module must be installed at the command line: openpyxl for spreadsheet file manipulations
 
 command syntax: pip install openpyxl for windows
 				pip3 install openpyxl for Osx
+#################################
 
-
-GET ALL THE LINKS
-
-Bleah. New plan. I absolutely can't use the google search method shown in Automate the boring stuff to fill in the text search box. I believe I'm looking at a form fill problem. I'm going to give 10 more min to seeing if I can use the google method and then start researching filling forms. Sigh. 
 
 
 #### Using Selenium to fill forms 
 
-
-
 table = soup.find_all('table')[0] # Select the table with the Gene Identity lin
                                   #This does not work because the TOI is nested inside a table
+                                  # Use Xpath instead
 
 # This is harder than it seemed, there are nested tables with similar names and links with similar Id's 
 # Below are methods and ideas to isolate the desired table cols and the links inside. 
@@ -71,34 +77,6 @@ table = soup.find_all('table')[0] # Select the table with the Gene Identity lin
 #This does not find a nested table as far as I can tell. 
 
 
-table = soup.find(lambda tag: tag.name=='table' and tag.has_attr('id') and tag['id']=="Table1") 
-rows = table.findAll(lambda tag: tag.name=='tr')
-
-
-# Nested example 
-
-table = soup.find('div',attrs={"class":"table-info"}) # This table had a class that could be identified
-spans = table.findAll('span')
-
-for span in spans:
-    if span.text.lower() == 'branch':
-        # Do your manipulation
-
-
-
-#Ok, let's list any identifiers possible with nesting
-
-<div class = "global content">
-	<table border = "0">  # this is the third table on the page and only one with border 
-		<tbody>
-			<tr>
-				<td valign = "top">
-					<form method ="post" name = "checkboxform" onsubmit ="return redirectOutput(this)">. # This is a unique identifier. Yay! 
-						<table border="0" class="styled" style='margin-left:0px">
-							<tbody>
-								<tr> -3rd down 
-									<td>
-										<a>   - a down the table until </tbody>
 
 
 #############################################
@@ -127,3 +105,63 @@ browser.get('http://inventwithpython.com')
 I noticed that a number of unique chrome browsers opened after playing with this command. I'm not sure if that's a good, bad or inconvienent thing. 
 
 
+The Daily log
+-----------------
+This code is pretty simple right now, but after the text is entered and submitted, no search items return 
+Something happens, the browser refreshes, but nothing else. 
+# Now I'm wondering about how the text is entered and the autocomplete java stuff. 
+# And also if the search is being blocked by some sort of automatic script sensor
+
+#I'm going to try the Firefox driver and see if that makes any difference - nope!
+# After a bit more careful peering at the html, I noticed the onkeyup option and did 
+# research I wish I'd done sooner. It was triggering the execution of some javascript. 
+# Solution below. 
+#Fuck yeah! sucess!!! I used the click() method and pinpointed the elements using xpath
+#The element's xpaths can be copied in the developer window after selecting them. 
+
+#next, sectecting one gene id link and putting that link name in a spreadsheet. make this a separate method
+
+#After doing some reading I realized that my xpaths are absolute and should be changed to relative. 
+#I'm trying to figure out the best way to select the gene id name, which does not have a tag or id attached to it. 
+#This may require a chained? xpath. Xpaths are going to be my main way of finding elements on this website. :P 
+# First, change absolute links to relative ones. 
+#Ok, I tried to change the absolute links to relative ones and that did not work. The relative link would not allow a keyword to be entered into the search bar, for instance. 
+
+#An unsatisfying day of coding, however while cleaning up my project space I realized that I'd entirely forgotten about using an API to get the table data and gene fragments. Tomorrow's quest then. 
+
+1/8/2020
+
+My notes are not too organized, but in my defense, I thought this project would take a week. 
+I found the API, but am not sure how to utilize it yet. 
+I believe I need to write a little script to uncheck and check some boxes.
+There is a possiblity that I can download all the transcripts from a little box I found up to the right. I would not need to access the API then and it might be easier to clean the data. 
+
+Yep. The Bed file provides a nice little list of all the transcripts. Tomorrow checkbox file scripts. 
+
+https://research.nhgri.nih.gov/hydra/jbrowse/display_jbrowse.cgi?loc=Sc4wPfr_1127.1%3A428974..461132&tracks=augustus%2Cscaffold%2CaepLRv2_splign&highlight=
+
+	Sc4wPfr_708.g2567.t1
+
+
+https://research.nhgri.nih.gov/hydra/jbrowse/display_jbrowse.cgi?loc=Sc4wPfr_708%3A1..47088&tracks=augustus%2Cscaffold%2CaepLRv2_splign&highlight=
+
+<a href="/hydra/jbrowse/display_jbrowse.cgi?loc=Sc4wPfr_708%3A179350..226463&amp;tracks=augustus,scaffold&amp;highlight=" target="_blank">View Gene in Genome Browser</a>
+
+https://research.nhgri.nih.gov/hydra/jbrowse/display_jbrowse.cgi?loc=Sc4wPfr_708%3A179345..226458&tracks=augustus%2Cscaffold&highlight=
+
+https://research.nhgri.nih.gov/hydra/jbrowse/display_jbrowse.cgi?loc=Sc4wPfr_708%3A179345..226458&tracks=augustus%2Cscaffold&highlight=
+
+
+from selenium import webdriver
+from selenium.webdriver.support.ui import Select
+
+driver = webdriver.Firefox()
+driver.get('url')
+
+select = Select(driver.find_element_by_id('fruits01'))
+
+# select by visible text
+select.select_by_visible_text('Banana')
+
+# select by value 
+select.select_by_value('1')
