@@ -107,6 +107,10 @@ I noticed that a number of unique chrome browsers opened after playing with this
 
 The Daily log
 -----------------
+1/14 I've given up on figuring out how to download the .bed file from the dropdown. At this point I feel the code necessary to figure out the javascript necessary to get it from the dropdown menu is more trouble than it's worth and will be prone to hard to track down bugs. I'm going to download the .json file and clean the very messy data, which is still just a text file. :P 
+
+
+1/10?
 This code is pretty simple right now, but after the text is entered and submitted, no search items return 
 Something happens, the browser refreshes, but nothing else. 
 # Now I'm wondering about how the text is entered and the autocomplete java stuff. 

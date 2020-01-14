@@ -24,14 +24,16 @@ keywordElem.send_keys('ig')
 
 #Click on the search button  
 try:
-	buttonPress = browser.find_element_by_xpath('/html/body/div[3]/form/table[4]/tbody/tr[2]/td[5]/input[2]').click()
+	buttonPress = browser.find_element_by_xpath(
+		'/html/body/div[3]/form/table[4]/tbody/tr[2]/td[5]/input[2]').click()
 	print ('Found buttonPress with that xpath')
 except:
     print('Was not able to find buttonPress.')
 
 #Click on gene id link returned by search 
 try:
-	resultElms = browser.find_element_by_xpath('/html/body/div[3]/table[3]/tbody/tr/td[1]/form/table[1]/tbody/tr[3]/td[2]/a').click()
+	resultElms = browser.find_element_by_xpath(
+		'/html/body/div[3]/table[3]/tbody/tr/td[1]/form/table[1]/tbody/tr[3]/td[2]/a').click()
 	print ('Found resultElms with that xpath')	
 except:
     print('Was not able to find resultElms.')
@@ -55,19 +57,31 @@ window_third = browser.window_handles[2]
 browser.switch_to.window(window_third)
 print('window_third') 
 
-time.sleep(5)# time.sleep is my new friend. Letting things load first has solved so many problems. 
+time.sleep(5)# This needs to be at least 5 seconds; adjust higher for slower connections to allow browser to load
 try:
-	JulianoCheckbox = browser.find_element_by_xpath('/html/body/div[2]/div[4]/div[5]/div[2]/div/div/label[2]/input').click()
+	JulianoCheckbox = browser.find_element_by_xpath(
+		'/html/body/div[2]/div[4]/div[5]/div[2]/div/div/label[2]/input').click()
 	print ('Found JulianoCheckbox')	
 except:
     print('Was not able to find JulianoCheckbox')
 
- # Juiano menu xpath
- #/html/body/div[2]/div[2]/div/div/div[1]/div/div[4]/div[3]/div[2]
+time.sleep(5)
+try:
+	JulianoDropdownMenu = browser.find_element_by_xpath(
+		'/html/body/div[2]/div[2]/div/div/div[1]/div/div[4]/div[3]/div[2]').click()
+	print ('Found JulianoDropdownMenu')	
+except:
+    print('Was not able to find JulianoDropdownMenu')
 
-# Dropdown menu mystery 
- #/html/body/div[10]/div[2]/form/fieldset[1]/div[2]/input 
- 
+
+try: 
+	save  
+	"https://research.nhgri.nih.gov/hydra/jbrowse/data/tracks/aepLRv2_splign/Sc4wPfr_1127.1/trackData.json"
+except:
+    print('Was not able to save aepLRv2_splign data')
+ https://research.nhgri.nih.gov/hydra/jbrowse/data/tracks/aepLRv2_splign/Sc4wPfr_1127.1/Juliano_aepLRv2-Sc4wPfr_1127.1-1..841098.bed
+
+
 time.sleep(5) 
 browser.close()
 browser.switch_to.window(window_second)
@@ -76,8 +90,5 @@ browser.switch_to.window(window_first)
 browser.close()
 
 
-
-#/html/body/div[2]/div[2]/div/div/div[1]/div/div[4]/div[3]/div[2] Juliano track button xpath
-#target = "_blank"
 
 
