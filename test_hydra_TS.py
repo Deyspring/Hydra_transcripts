@@ -6,12 +6,12 @@ class TestResults(unittest.TestCase):
 
 	search_term = ( 
 					('ig',  'Sc4wPfr_1127.1.g1468.t2'),
-					('ig',  'Sc4wPfr_758.g3710.t3'),
-					('Ig_5','Sc4wPfr_172.1.g1567.t1')
+					#('Ig_2', 'Sc4wPfr_730.1.g118.t1'),
+					#('Ig_5','Sc4wPfr_172.1.g1567.t1')
 				   )
 	
 	def test_search_known_results(self):
-		#Input a list of search terms and get different result geneIds
+		#Input a list of search terms and get resulting geneIds
 		for term,value in self.search_term: 
 			result = hydra_ts.search_term(term)
 			self.assertEqual(value,result, "Should be geneID: " +value)
