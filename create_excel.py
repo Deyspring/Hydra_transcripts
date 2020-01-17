@@ -1,33 +1,23 @@
-
-# Test code to create an excel file and import website data into it.
-# This code seems to work. Yay! 
+# python!
+# Create_excel makes an excel file with a title based on a website and the date. 
+###TODO make sure this always saves a worksheet with a different name so they don't get saved over each other.
 
 import openpyxl
+import time
 
+title = 'Pfam Domains'
+subtitle = 'Pfam domains in predicted Hydra proteins'
+number = '1'
 
-#Create an excel file
-wb = openpyxl.load_workbook('hydra.xlsx')
-
-#Create a top sheet
-sheet = wb.get_sheet_by_name('Sheet1')
-
-#Make a gene identifier as a test case 
-gene_Ident = sheet.cell( row = 11, column = 1 ).value
-
-#and the transcripts associated with each gene
-transcripts = ['a','b','c']
-
-# Todo: loop through all the rows and add the gene identifiers and transcripts 
-
-for rowNum in range(11, sheet.max_row):  # skip the first rows
-	gene_Ident = sheet.cell(row=rowNum, column=1).value
+def create_header(title,subtitle):
+#Excel file with a title based on a website and the date
 	
-	colNum = 2
+	wb = openpyxl.Workbook() # Create a blank workbook
+ 	wb.sheetnames # It starts with one sheet
+  	sheet = wb.active
+  	sheet.title
+  	sheet.title = title # Change title.
+  	wb.save( title + '_'+number +'.xlsx') # Save the workbook.
 
-	for i in transcripts: 
-		sheet.cell(row=rowNum, column=colNum).value = i
-		colNum += 1
+ 	return 
 
-print (sheet.cell(row=11, column=2).value)
-
-wb.save('UpdateHydra.xlsx')
