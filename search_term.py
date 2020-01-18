@@ -1,6 +1,7 @@
 # python!
-# Hydra_ts creates a spreadsheet after search terms are entered on the Pfam page for hydra. 
-# This spreadsheet is populated with the resulting geneIDs and their transcripts. 
+# search_term enters terms on the Pfam Domain page for Hydra
+# TODO: enter multiple search terms for results. 
+# TODO: return multiple geneId for each search term 
 
 import openpyxl
 import time
@@ -43,8 +44,3 @@ def search_term(term):
 
 
 
-#inputString = input('Enter "ig" as a test search term: ')
-#inputList = ['ig','Ig_2',''Ig_5']
-#for i in inputList: 
-# 	search_term = i 
-	#return genetranscripts 
