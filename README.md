@@ -20,6 +20,7 @@ Rough code outline and possible modules:
   - 90% done'
 
 3a. clip off geneID portion so it can be looped 
+    this section is proving to be harder than it seemed to make a unit test for. I'm stuck for now. 
 
 4. GeneID_json link
    - ok, this could go one of two ways. 
