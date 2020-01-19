@@ -2,6 +2,39 @@
 The Daily log
 -----------------
 
+1/18
+
+I have made two working modules, the create_excel.py module that makes an excell spreadsheet with header(eventually it will have functions to add geneIds and transcripts to the created spreadsheet) The search_pfam.py module accepts one search term and returns one gene id. Both modules have unit_tests, but I'm having difficulty writing the test for the excell module as the output is all in an excel file. I am trying to write tests that enter bad data to get proper fails too, but I'm struggling with that as well. I can see why people say not to write code until you've written a unit test for it, they are a little frustrating to write. 
+
+I'm kinda burnt on the unit testing of the above modules, and will return to them later. Meanwhile, I'm going to start on another module while I have the energy and then return to this tomorrow. I have to bike back home before it gets dark so I can walk pardi and feed her. 
+
+Rough code outline and possible modules: 
+
+1.Accept list of search terms. 
+  #use the command line input function to accept search terms and place them in a list. 
+
+2.Create spreadsheet header
+   -90% done
+
+3. Open browser portal and call search_term from search_pfam.py
+  - 90% done'
+
+3a. clip off geneID portion so it can be looped 
+
+4. GeneID_json link
+   - ok, this could go one of two ways. 
+        - get one geneId at a time and then the related transcripts and put these in spreadsheet
+        -The geneID is needed to get the JSon, which is different each time the browser is opened. 
+        -The geneIDs will need to be used one at a time. 
+        -I can still put them in a list for use.... thinking about it. 
+        -for now lets do them one at a time
+5. Get 
+
+5. Update excel module
+    - put gene id and then transcripts into spreadsheet. 
+
+
+
 1/15 
 
 Karen added two suggestions to my TODO list: 

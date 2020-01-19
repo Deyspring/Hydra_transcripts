@@ -1,9 +1,8 @@
-# python!
+# !python
 # Json file stripper module
 # A module to download a Json file, transform it to Python data and strip out the relevant transcripts
 
 import json, requests, sys, pprint
-
 
 # Download the JSON data from Hydra Portal's API
 

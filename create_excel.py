@@ -1,4 +1,4 @@
-# python!
+#! python
 # Create_excel makes an excel file with a title based on a website and the date. 
 ###TODO make sure this always saves a worksheet with a different name so they don't get saved over each other.
 
@@ -10,7 +10,7 @@ subtitle = 'Pfam domains in predicted Hydra proteins'
 web_address = 'https://research.nhgri.nih.gov/hydra/pfam/'
 number = '1'
 
-def create_header(title,subtitle,web_adress,number):
+def create_xxx(title,subtitle,web_adress,number): # change name back to create_header after testing
 #Excel file with a title based on a website and the date
 	title = title.replace(" ","")
 	wb = openpyxl.Workbook() # Create a blank workbook

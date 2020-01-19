@@ -1,4 +1,4 @@
-# python!
+#! python
 # search_term enters terms on the Pfam Domain page for Hydra
 # TODO: enter multiple search terms for results. 
 # TODO: return multiple geneId for each search term 

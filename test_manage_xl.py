@@ -5,13 +5,13 @@ class TestResults(unittest.TestCase):
 
 	from datetime import date
 	known_values = 'PfamDomains_1.xls'
-	 arguments = ('Pfam Domains',
-	             'Pfam domains in predicted Hydra proteins',
+	arguments = ('Pfam Domains',
+				 'Pfam domains in predicted Hydra proteins',
 				 'https://research.nhgri.nih.gov/hydra/pfam/.html',
 				 1 
 				)
 
-	def create_excel(self):
+	def test_create_excel(self):
 		# Creates a new spreadsheet with header based on website and current date
 		result = create_excel.create_header(arguments)
 		datestamp = (date.today()).strftime("%b/%d/%Y")
