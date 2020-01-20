@@ -237,3 +237,5 @@ bail@chrome://marionette/content/sync.js:237:64
 1579389173181	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
 1579389174816	Marionette	INFO	Listening on port 65068
 1579389174855	Marionette	WARN	TLS certificate errors will be ignored for this session
+1579490353398	Marionette	INFO	Stopped listening on port 61721
+1579490379541	Marionette	INFO	Stopped listening on port 65068
