@@ -2,6 +2,14 @@
 The Daily log
 -----------------
 
+1/21 
+More progress has been made on the unit tests. I've made two excel modules to create and then populate the spreadsheet. 
+They are not yet complete and the unit tests are harder to write for these. I'm afraid I'm kinda fudging on them right now so I can get a somewhat working version of the Hydra code to show Callen this week. 
+
+I can't figure out how to do a while loop that depends on the results of a try except to figure out. 
+
+I banged out a lot of sketchy code today, just to get an idea of how it should all work. In retrospect, I should have sat down with a piece of paper to figure that out and then worked on the unit tests. Nothing works, so I didn't make any progress. 
+
 1/18
 
 I have made two working modules, the create_excel.py module that makes an excell spreadsheet with header(eventually it will have functions to add geneIds and transcripts to the created spreadsheet) The search_pfam.py module accepts one search term and returns one gene id. Both modules have unit_tests, but I'm having difficulty writing the test for the excell module as the output is all in an excel file. I am trying to write tests that enter bad data to get proper fails too, but I'm struggling with that as well. I can see why people say not to write code until you've written a unit test for it, they are a little frustrating to write. 

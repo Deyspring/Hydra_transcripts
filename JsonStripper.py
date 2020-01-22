@@ -1,25 +1,25 @@
 # !python
 # Json file stripper module
-# A module to download a Json file, transform it to Python data and strip out the relevant transcripts
+# Transcripts are returned after a Json file is downloaded, transformed to python code and the transcripts are stripped out.   
 
 import json, requests, sys, pprint
 
-# Download the JSON data from Hydra Portal's API
+def transcripts_from_Json(geneID): 
+	# Download the JSON data from Hydra Portal's API using a url
+	url = "https://research.nhgri.nih.gov/hydra/jbrowse/data/tracks/aepLRv2_splign/" 
+		  + geneID + "/trackData.json"
 
-#TODO: put relvant GeneId name into this url ad forget about grabbing it each time
-url = "https://research.nhgri.nih.gov/hydra/jbrowse/data/tracks/aepLRv2_splign/Sc4wPfr_178/trackData.json"
+	response = requests.get(url)
+	response.raise_for_status()
 
-response = requests.get(url)
-response.raise_for_status()
+ 	# Load JSON data into a Python variable.
+	transcriptData = json.loads(response.text)
 
- # Load JSON data into a Python variable.
-transcriptData = json.loads(response.text)
-#pprint.pprint(response.text)
+	t = transcriptData['intervals']
 
-t = transcriptData['intervals']
+	# Whoohoo! I have the code to select one transcript. 
+	print(t['nclist'][0][6]) #This complicated selector is necessary because the dictionary is nested. 
 
-# Whoohoo! I have the code to select one transcript. 
-
-print(t['nclist'][0][6]) #This complicated selector is necessary because the dictionary is nested. 
+	return t['nclist'][0][6]
 
 		
