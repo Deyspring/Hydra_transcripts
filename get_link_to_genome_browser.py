@@ -48,7 +48,7 @@ def get_link_to_genome_browser(browser, gene_id):
 	browser.refresh()
 
 	short_gene_id = gene_id.split('.')
-	jbrowse_url = 'https://research.nhgri.nih.gov/hydra/jbrowse/data/tracks/scaffold/'\
+	jbrowse_url = 'https://research.nhgri.nih.gov/hydra/jbrowse/data/tracks/aepLRv2_splign/'\
 				  + short_gene_id[0] + '/trackData.json'
 
 	print (jbrowse_url)

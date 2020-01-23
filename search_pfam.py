@@ -22,10 +22,10 @@ gene_ids = search_term('input_string')
 def get_link_to_genome_browser(browser, gene_id): 
 	'Takes a gene id and clicks through _View Gene in Genome Browser_ webpage to jbrowser'
 
-   	gene_browser_id = link_to_genome.split('=augustus')
-   	jbrowse_url = gene_browser_id[0] +'%2Cscaffold%2CaepLRv2_splign&highlight='
+	gene_browser_id = link_to_genome.split('=augustus')
+	jbrowse_url = gene_browser_id[0] +'%2Cscaffold%2CaepLRv2_splign&highlight='
 
-   	return jbrowse_url
+	return jbrowse_url
 
 
 def search_term(term): 
