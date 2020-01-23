@@ -7,8 +7,41 @@ from selenium import webdriver
 browser = webdriver.Firefox()
 browser.get('https://research.nhgri.nih.gov/hydra/pfam/')
 
+###Home page: window_first
+window_first = browser.window_handles[0] # Store the window handle variable before clicking any links
+print("window_first")
+
+input_string = input('Enter "ig" as a test search term: ')
+
+#search term returns a list of gene_ids
+gene_ids = search_term('input_string')
+
+###Gene page: window_second
+
+
+
+def get_link_to_genome_browser(gene_id): 
+	'Takes a gene id and returns the correct Genome Browser link'
+	url = 'https://research.nhgri.nih.gov/hydra/genewiki/gene_page.cgi?gene=' + gene_id
+	time.sleep(5) # This is crucial!!! If the browser does not have time to load the second page, the handle will not be reset to the correct page. 
+	window_second = browser.window_handles[1] # After clicking the result button, store the window handle variable of second page
+	browser.switch_to.window(window_second)
+	print("window_second")
+	# Click the 'View Gene in Genome Browser link' - it seems to be the only way to get the correct json file
+	try:
+		link_to_genome = browser.find_element_by_link_text('View Gene in Genome Browser').text 
+		print ('Found link_to_genome with that xpath')
+	except:
+   		print('Was not able to find link_to_genome')
+
+   	gene_browser_id = link_to_genome.split('=augustus')
+   	jbrowse_url = gene_browser_id[0] +'%2Cscaffold%2CaepLRv2_splign&highlight='
+
+   	return jbrowse_url
+
+
 def search_term(term): 
-	'''input a search term and return a list of geneIDs'''
+	'''input a search term and return a list of gene_ids'''
 
 	if type(term) != str:
 		raise not_string_error('the search term is not a string') 
@@ -57,6 +90,12 @@ def search_term(term):
 
 	print (gene_ids)
 	return gene_ids
+
+	transcripts_from_Json(gene_ids)
+
+	print (transcripts)
+
+
 
 class NotStringError(ValueError): 
 	pass   
