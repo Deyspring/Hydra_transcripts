@@ -12,11 +12,13 @@ def get_link_to_Genome_Browser(browser, gene_id):
 	'Takes a gene id and clicks through _View Gene in Genome Browser_ webpage to jbrowser'
 	
 	#Gene page: window_one
-	#window_first = browser.window_handles[0] # Store the window handle variable before clicking any links
+	window_first = browser.window_handles[0] # Store the window handle variable before clicking any links
 	print("window_first")
 
 	url = 'https://research.nhgri.nih.gov/hydra/genewiki/gene_page.cgi?gene=' + gene_id
 	browser.get(url)
+	time.sleep(1)
+	print ('window 1 sleeping .... ')
 
 	# Click the 'View Gene in Genome Browser link' - it seems to be the only way to get the correct json file
 	try:
@@ -24,15 +26,16 @@ def get_link_to_Genome_Browser(browser, gene_id):
 		print ('Found link_to_genome with that xpath')
 	except:
 		print('Was not able to find link_to_genome')
-	
-	time.sleep(5)
-	print ('window 1 sleeping .... ')
 	browser.close()
 
 	###JBrowser page: window_second
-	time.sleep(5) # This is crucial!!! If the browser does not have time to load the second page, the handle will not be reset to the correct page. 
-	#window_second = browser.window_handles[0] # After clicking the result button, store the window handle variable of second page
-	#browser.switch_to.window(window_second)
+	window_second = browser.window_handles[0] # After clicking the result button, store the window handle variable of second page
+	browser.switch_to.window(window_second)
+
+	# This is crucial!!! If the browser does not have time to load the second page, 
+	# the handle will not be reset to the correct page. Sleep time may need to be lengthened if browser takes too long to load
+	# this may be a good thing to put in a try except to retry finding the link if it is not found immediately. 
+	time.sleep(8)
 	print("window_second sleeping... ")
 
 	try:
@@ -41,9 +44,7 @@ def get_link_to_Genome_Browser(browser, gene_id):
 		print ('Found JulianoCheckbox')	
 	except:
 		print('Was not able to find JulianoCheckbox')
-	
 	return 
-
 
 get_link_to_Genome_Browser(browser,'Sc4wPfr_1127.1.g1468.t2')
 
