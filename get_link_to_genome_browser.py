@@ -1,5 +1,5 @@
 #!python
-# get_link_to_Genome_browser 
+# get_link_to_genome_browser 
 # This module is necessary because a link is generated here with an gene id extenstion I 
 # can't figure out. So, the link on this page just has to be clicked. :P 
 import time
@@ -8,7 +8,7 @@ import json, requests, sys, pprint
 
 browser = webdriver.Firefox()
 
-def get_link_to_Genome_Browser(browser, gene_id): 
+def get_link_to_genome_browser(browser, gene_id): 
 	'Takes a gene id and clicks through _View Gene in Genome Browser_ webpage to jbrowser'
 	
 	#Gene page: window_one
@@ -44,9 +44,18 @@ def get_link_to_Genome_Browser(browser, gene_id):
 		print ('Found JulianoCheckbox')	
 	except:
 		print('Was not able to find JulianoCheckbox')
-	return 
+ 
+	browser.refresh()
 
-get_link_to_Genome_Browser(browser,'Sc4wPfr_1127.1.g1468.t2')
+	short_gene_id = gene_id.split('.')
+	jbrowse_url = 'https://research.nhgri.nih.gov/hydra/jbrowse/data/tracks/scaffold/'\
+				  + short_gene_id[0] + '/trackData.json'
+
+	print (jbrowse_url)
+	return jbrowse_url
+
+
+get_link_to_genome_browser(browser,'Sc4wPfr_1127.1.g1468.t2')
 
 time.sleep(5) 
 browser.close()

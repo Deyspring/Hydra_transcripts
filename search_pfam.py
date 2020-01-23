@@ -3,6 +3,7 @@
 
 import time
 from selenium import webdriver
+import get_link_to_genome_browser 
 
 browser = webdriver.Firefox()
 browser.get('https://research.nhgri.nih.gov/hydra/pfam/')
@@ -18,21 +19,8 @@ gene_ids = search_term('input_string')
 
 ###Gene page: window_second
 
-
-
-def get_link_to_genome_browser(gene_id): 
-	'Takes a gene id and returns the correct Genome Browser link'
-	url = 'https://research.nhgri.nih.gov/hydra/genewiki/gene_page.cgi?gene=' + gene_id
-	time.sleep(5) # This is crucial!!! If the browser does not have time to load the second page, the handle will not be reset to the correct page. 
-	window_second = browser.window_handles[1] # After clicking the result button, store the window handle variable of second page
-	browser.switch_to.window(window_second)
-	print("window_second")
-	# Click the 'View Gene in Genome Browser link' - it seems to be the only way to get the correct json file
-	try:
-		link_to_genome = browser.find_element_by_link_text('View Gene in Genome Browser').text 
-		print ('Found link_to_genome with that xpath')
-	except:
-   		print('Was not able to find link_to_genome')
+def get_link_to_genome_browser(browser, gene_id): 
+	'Takes a gene id and clicks through _View Gene in Genome Browser_ webpage to jbrowser'
 
    	gene_browser_id = link_to_genome.split('=augustus')
    	jbrowse_url = gene_browser_id[0] +'%2Cscaffold%2CaepLRv2_splign&highlight='
