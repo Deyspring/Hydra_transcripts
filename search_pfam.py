@@ -4,6 +4,7 @@
 import time
 from selenium import webdriver
 import get_link_to_genome_browser 
+import search_term
 
 browser = webdriver.Firefox()
 browser.get('https://research.nhgri.nih.gov/hydra/pfam/')

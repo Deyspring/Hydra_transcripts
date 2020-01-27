@@ -2,6 +2,9 @@
 The Daily log
 -----------------
 
+1/27
+Massive cleanup of files, I have enough of them that I wasn't sure where code I made went or was supposed to go. .. ANyways, it still needs more cleanup before I do any more programming. Also unit tests need to be done on the functions. Karen had a way to get the json files cleaned up that she wasn't able to share with me on Saturday. Onward
+
 1/21 
 More progress has been made on the unit tests. I've made two excel modules to create and then populate the spreadsheet. 
 They are not yet complete and the unit tests are harder to write for these. I'm afraid I'm kinda fudging on them right now so I can get a somewhat working version of the Hydra code to show Callen this week. 

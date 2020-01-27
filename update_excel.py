@@ -26,3 +26,43 @@ def update_xl():
 	print (sheet.cell(row=11, column=2).value)
 
 	wb.save('UpdateHydra.xlsx')
+
+"""
+	import openpyxl
+import time
+
+title = 'Pfam Domains'
+subtitle = 'Pfam domains in predicted Hydra proteins'
+
+def create_xl(title,subtitle):
+
+#Create an excel file
+wb = openpyxl.load_workbook('hydra.xlsx')
+sheet = wb.get_sheet_by_name('Sheet1') #top sheet
+
+
+
+wb.save('UpdateHydra.xlsx')
+
+
+title = 'Pfam Domains'
+subtitle = 'Pfam domains in predicted Hydra proteins'
+
+def create_xl(title,subtitle):
+
+#Create an excel file
+wb = openpyxl.load_workbook('hydra.xlsx')
+sheet = wb.get_sheet_by_name('Sheet1') #top sheet
+
+
+
+wb.save('UpdateHydra.xlsx')
+
+
+
+
+
+"""
+
+
+
