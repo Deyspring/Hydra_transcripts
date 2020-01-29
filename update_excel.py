@@ -1,7 +1,12 @@
 #python!
+#Hello? module description needed
 
+pass #stub for testing
 
+"""
 import openpyxl
+
+
 
 def update_xl(): 
 	'''Update excel file with geneIDs and their transcripts'''
@@ -27,7 +32,7 @@ def update_xl():
 
 	wb.save('UpdateHydra.xlsx')
 
-"""
+========================================
 	import openpyxl
 import time
 
@@ -57,7 +62,6 @@ sheet = wb.get_sheet_by_name('Sheet1') #top sheet
 
 
 wb.save('UpdateHydra.xlsx')
-
 
 
 

@@ -9,6 +9,9 @@ import json, requests, sys, pprint
 
 def transcripts_from_Json(json_url): 
 	# Download the JSON data from Hydra Portal's API using a url
+	
+	pass # stub for testing
+'''
 	transcripts =[]
 	response = requests.get(json_url)
 	response.raise_for_status()
@@ -33,7 +36,9 @@ def transcripts_from_Json(json_url):
 json_url = 'https://research.nhgri.nih.gov/hydra/jbrowse/data/tracks/aepLRv2_splign/Sc4wPfr_844/trackData.json'
 list_of_transcripts = transcripts_from_Json(json_url)
 
-#Sc4wPfr_844	102021	102494	t12588aep|97511		+					
+#Sc4wPfr_844	102021	102494	t12588aep|97511		+		
+
+'''		
 
  
 

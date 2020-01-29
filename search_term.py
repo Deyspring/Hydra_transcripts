@@ -1,8 +1,12 @@
 # python!
+# Description needed
 
-def search_term(term): 
+
+def search_geneid(term): 
 	'''input a search term and return a geneID'''
+	pass # stub for testing 
 
+'''
 	# Find the keyword field and enter the term 
 	keyword_box = '/html/body/div[3]/form/table[4]/tbody/tr[2]/td[5]/input[1]'
 	try:
@@ -28,12 +32,11 @@ def search_term(term):
 		geneIdElem = browser.find_element_by_xpath(result_link).text
 		gene_ids = gene_ids.append((geneIdElem.split("="))[0])
 		row +=1
-		else: 
-			print('geneids in list')
-			break
+	else: 
+		print('geneids in list')
 	
 	return gene_ids
-
+'''
 
 
 

@@ -1,6 +1,10 @@
 
 The Daily log
 -----------------
+1/28
+
+I didn't finish the cleanup yesterday and I need to rename some files tomorrow. json_stripper2 im looking at you.  The main hydra_ts_Working file is working, although I need to check some things. I need to add the execel modules to the start and end. Otherwise progress was made today. I might have something to show to Callen on Thursday. The code feels rickety, badly named and awkward, but hey. It's my first real project and it is coming along nicely. 
+
 
 1/27
 Massive cleanup of files, I have enough of them that I wasn't sure where code I made went or was supposed to go. .. ANyways, it still needs more cleanup before I do any more programming. Also unit tests need to be done on the functions. Karen had a way to get the json files cleaned up that she wasn't able to share with me on Saturday. Onward

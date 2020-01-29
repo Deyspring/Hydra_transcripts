@@ -11,6 +11,9 @@ subtitle = 'Pfam domains in predicted Hydra proteins'
 web_address = 'https://research.nhgri.nih.gov/hydra/pfam/'
 number = '1'
 
+pass #stub for testing
+
+"""
 def new_filename(): #eventally have it take create_header return 
 	'''Make sure the new excel file created does not have the same name as one that exists'''
 
@@ -27,17 +30,19 @@ def new_filename(): #eventally have it take create_header return
 	print(new_filename + "new_filename")
 	return 
 
+'''
+
 while True:
     value = raw_input('Enter new spreadsheet name: ')
     try:
-       value == old_value)
+       value == old_value
     except ValueError:
-       print 'Valid number, please'
+       print ('Valid number, please')
        continue
     if 0 <= value <= 100:
        break
     else:
-       print 'Valid range, please: 0-100'
+       print ('Valid range, please: 0-100')'''
 
 
 
@@ -90,4 +95,5 @@ def update_xl():
 
 #create_header(title, subtitle, web_address, number)
 new_filename()
+"""
 
