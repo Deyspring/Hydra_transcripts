@@ -5,78 +5,52 @@
 import openpyxl
 from datetime import date
 import os
+from openpyxl.styles import Font
+import pdb # debugging module
+#pdb.set_trace()
+
 
 title = 'Pfam Domains'
 subtitle = 'Pfam domains in predicted Hydra proteins'
 web_address = 'https://research.nhgri.nih.gov/hydra/pfam/'
-number = '1'
 
-pass #stub for testing
+#pass #stub for testing
 
-"""
-def new_filename(): #eventally have it take create_header return 
-	'''Make sure the new excel file created does not have the same name as one that exists'''
-
-	xl_names = [x for x in os.listdir() if x.endswith(".xlsx")]
-	print(xl_names)
-
-	new_filename = input('Enter new spreadsheet name: ')
-
-	for filename in xl_names: 
-		print (filename)
-		if filename == 'new_filename':
-			print ('A file with that name exists.') 
-		
-	print(new_filename + "new_filename")
-	return 
-
-'''
-
-while True:
-    value = raw_input('Enter new spreadsheet name: ')
-    try:
-       value == old_value
-    except ValueError:
-       print ('Valid number, please')
-       continue
-    if 0 <= value <= 100:
-       break
-    else:
-       print ('Valid range, please: 0-100')'''
-
-
-
-
-
-def create_header(title,subtitle,web_adress,number): 
+def create_header(title,subtitle,web_adress): 
 	'''Excel file with a title based on a website and the date'''
+
 	title = title.replace(" ","")
 	wb = openpyxl.Workbook() # Create a blank workbook
 	wb.sheetnames # It starts with one sheet
 	sheet = wb.active
 	sheet.title
-	sheet.title = title # Change title.
+	sheet.title = title # Change titles
 
-	# Month abbreviation, day and year	
-	datestamp = (date.today()).strftime("%b/%d/%Y")
+	#Month abbreviation, day and year	
+	datestamp = (date.today()).strftime("%b_%d_%Y")
+
+	#Create fonts
+	title_style = Font(size=24, bold=True) 
 
 	#Format spreadsheet
 	sheet['A1'] = title
+	sheet['A1'].font = title_style
 	sheet['A2'] = subtitle
 	sheet['A3'] = web_address
 	sheet['A5'] = datestamp 
+	wb.save( title+ '_' + datestamp + '.xlsx' ) # Save the workbook.
+	print('saved workbook')
+	return 
 
-	return wb.save( title + '_'+ number +'.xlsx' ) # Save the workbook.
-
-
-def update_xl(): 
-	'''Update excel file with geneIDs and their transcripts'''
-
+def update_xl(search_term, geneids, transcripts): 
+	'''Update excel file with a search term and it's resulting geneids and transcripts'''
+	# Search term 
+	search_term_header = sheet.cell(row = 11, column =1).value
 	#Make a gene identifier as a test case 
-	gene_Ident = sheet.cell( row = 11, column = 1 ).value
+	geneid_cell = sheet.cell( row = 12, column = 1 ).value
 
 	#and the transcripts associated with each gene
-	transcripts = ['a','b','c']
+	transcript_cell = ['a','b','c']
 
 	# Todo: loop through all the rows and add the gene identifiers and transcripts 
 
@@ -93,7 +67,6 @@ def update_xl():
 
 	wb.save('UpdateHydra.xlsx')
 
-#create_header(title, subtitle, web_address, number)
-new_filename()
-"""
+create_header(title, subtitle, web_address)
+#new_filename()
 

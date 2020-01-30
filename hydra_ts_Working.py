@@ -3,6 +3,8 @@
 #After entering search term(s) into the Pfam domain name searchbox, a spreadsheet
 #is returned with the geneIds and lists of transcripts related to that search term. 
 
+import pdb # debugging module
+#pdb.set_trace()
 import time
 from selenium import webdriver
 import create_excel
@@ -11,11 +13,8 @@ import get_link_to_genome_browser as gl
 import search_term
 import json_stripper2
 
-#TODO
-# create_excel 
-# easy way to do this would be to incorporate date/time into filename. Shrug
-# make spreadsheet header and make sure it has a different name than previous spreadsheets. 
-# Not sure exactly how to do this. # gave this a shot, struggled, moving on. 
+#Create new excel file 
+create_excel.create_header() 
 
 #Prompt for list of search terms 
 terms = []
