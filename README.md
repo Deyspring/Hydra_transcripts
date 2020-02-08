@@ -1,6 +1,14 @@
 
 The Daily log
 -----------------
+2/7 still really, really sick. May get job. 
+Almost got manage_xl.py module working, got stuck on the term loop and making sure it saves with a new name and doesn't overwrite. 
+
+2/4  
+Bleah. Interview prep, weekend stuff, sick yesterday. Here I am and I feel like I've forgotten everything I did already. 
+
+Ok. Made progress. I got create_excel.create_header() to work in hydra_ts_Working.py, but for some reason when I was working on add_data_xl in that module, the terminal said it could not find the openpyxl file. Also, fell asleep when writing rest of log. 
+
 1/28
 
 I didn't finish the cleanup yesterday and I need to rename some files tomorrow. json_stripper2 im looking at you.  The main hydra_ts_Working file is working, although I need to check some things. I need to add the execel modules to the start and end. Otherwise progress was made today. I might have something to show to Callen on Thursday. The code feels rickety, badly named and awkward, but hey. It's my first real project and it is coming along nicely. 
