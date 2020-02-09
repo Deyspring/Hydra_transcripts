@@ -36,6 +36,15 @@ def create_header():
 	sheet['A2'] = subtitle
 	sheet['A3'] = web_address
 	sheet['A5'] = datestamp 
+
+	testing1 = "term"
+	testing2 = "geneid"
+	testing3 = "transcripts"
+	sheet.cell(row=7, column=1).value = testing1
+	sheet.cell(row=8, column=1).value = testing2
+	sheet.cell(row=8, column=2).value = testing3
+
+
 	wb.save( title+ '_' + datestamp + '.xlsx' ) # Save the workbook.
 	file_name = (title+ '_' + datestamp + '.xlsx')
 
@@ -65,7 +74,9 @@ def add_data_xl(terms, geneids, transcripts):
 	testing1 = "term"
 	testing2 = "geneid"
 	testing3 = "transcripts"
-	sheet.cell(row=row_num, column=col_num).value = term
+	sheet.cell(row=12, column=1).value = testing1
+	sheet.cell(row=13, column=1).value = testing2
+	sheet.cell(row=13, column=2).value = testing3
 
 	for term, geneids,transcript_sets in zip(terms,geneids,transcripts): 
 		#print ("term, geneids and transcript_sets for this term are: ", term,geneids,transcript_sets)
