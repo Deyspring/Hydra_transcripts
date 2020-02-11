@@ -1,6 +1,9 @@
 
 The Daily log
 -----------------
+2/9
+Less sick, still hacking 
+
 2/7 still really, really sick. May get job. 
 Almost got manage_xl.py module working, got stuck on the term loop and making sure it saves with a new name and doesn't overwrite. 
 
