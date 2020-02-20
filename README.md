@@ -2,6 +2,17 @@
 The Daily log
 -----------------
 2/19
+Got manage_xl.py module mostly working.  Things to work on: 
+
+Accept list of search terms. 
+  - 50% done. Only accepts one term
+
+
+GeneID_json link
+   url = get_link_to_genome_browser(geneid) Get this to work. 
+
+Excel module
+    - Formatting can be improved in datetime presentation and spacing between each term.
 
 2/9
 Less sick, still hacking 
@@ -39,27 +50,15 @@ I'm kinda burnt on the unit testing of the above modules, and will return to the
 Rough code outline and possible modules: 
 
 1.Accept list of search terms. 
-  #use the command line input function to accept search terms and place them in a list. 
+  - 50% done. Only accepts one term
+  use the command line input function to accept search terms and place them in a list. 
 
-2.Create spreadsheet header
-   -90% done
 
-3. Open browser portal and call search_term from search_pfam.py
-  - 90% done'
+ GeneID_json link
+   url = get_link_to_genome_browser(geneid) Get this to work. 
 
-3a. clip off geneID portion so it can be looped 
-    this section is proving to be harder than it seemed to make a unit test for. I'm stuck for now. 
-
-4. GeneID_json link
-   - ok, this could go one of two ways. 
-        - get one geneId at a time and then the related transcripts and put these in spreadsheet
-        -The geneID is needed to get the JSon, which is different each time the browser is opened. 
-        -The geneIDs will need to be used one at a time. 
-        -I can still put them in a list for use.... thinking about it. 
-        -for now lets do them one at a time
-5. Get 
-
-5. Update excel module
+5. Excel module
+    - Done
     - put gene id and then transcripts into spreadsheet. 
 
 

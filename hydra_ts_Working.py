@@ -10,11 +10,11 @@ import get_link_to_genome_browser
 import search_term
 
 
-#Create a new excell workbook to put all the data in
-manage_excel.create_header() 
-
 #Prompt for list of search terms 
-terms = input('Enter search term(s): ') #How do I do this for multiple terms? 
+terms = input('Enter search term(s): ') #Change this so list of search terms are accepted. 
+# enter a search term, or enter "Done"
+# try except loop to make terms list
+
 
 # Open Hydra web portal
 browser = webdriver.Firefox()
@@ -25,13 +25,14 @@ window_first = browser.window_handles[0] # Store the window handle variable befo
 for term in terms: 
 	#Search term entered; returns list of geneids 
 	geneids = search_term.search_geneid(term)
-
+	
 	for geneid in geneids: 
 		url = get_link_to_genome_browser(geneid)
 		transcripts = json_stripper(url)
 
-		#TODO put a geneid in the spreadsheet with it's transcripts
-	    #TODO close browser windows
+manage_excel(terms, geneids, transcripts)
+
+#TODO close browser windows
 
 
-#TODO save and close spreadsheet Give indication that proram is complete
+#Give indication that proram is complete
