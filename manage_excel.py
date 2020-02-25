@@ -1,11 +1,12 @@
 #! python
 # Create_excel makes an excel file with a title based on a website and the date. 
-###TODO make sure this always saves a worksheet with a different name so they don't get saved over each other.
 
 import openpyxl
 from openpyxl.styles import Font
 import time
 
+if __name__ == '__main__': #not sure what to name instead of _main_ for clarity 
+  main()
 
 def manage_excel(terms, geneids, transcripts): 
 	'''Excel file with a title based on a website and the date'''
@@ -53,11 +54,12 @@ def manage_excel(terms, geneids, transcripts):
 
 	print('saved workbook')
 
-
+"""
 terms = ['ig','pop']
 geneids = [['badger','monkey','baboon','mushroom'],['badger2','monkey2','baboon2','mushroom2']]
 transcripts = [['bad','bad','bad','bad'],['mon','mon','mon','mon'],['boon','boon','boon'],['mush','room','mush','room']],[['bad2','bad2','bad2','bad2'],['mon2','mon2','mon2','mon2'],['boon2','boon2','boon2'],['mush2','room2','mush2','room2']]
 
 manage_excel(terms,geneids,transcripts) 
+"""
 
 

@@ -9,26 +9,29 @@ import manage_excel
 import get_link_to_genome_browser 
 import search_term
 
+# Accept user input and return a list of terms 
+terms =[]
+term = None
 
-#Prompt for list of search terms 
-terms = input('Enter search term(s): ') #Change this so list of search terms are accepted. 
-# enter a search term, or enter "Done"
-# try except loop to make terms list
+while term != 'done': 
+	print('Enter "done" when done entering terms')
+	term = input('Enter search term(s): ')
+	terms.append(term)
 
+print (terms)
 
 # Open Hydra web portal
 browser = webdriver.Firefox()
+print("browser")
 browser.get('https://research.nhgri.nih.gov/hydra/pfam/')
 window_first = browser.window_handles[0] # Store the window handle variable before clicking any links
 
 #Enter search terms and get geneids. 
-for term in terms: 
-	#Search term entered; returns list of geneids 
-	geneids = search_term.search_geneid(term)
+geneids = search_term.search_geneid(terms)  
 	
-	for geneid in geneids: 
-		url = get_link_to_genome_browser(geneid)
-		transcripts = json_stripper(url)
+for geneid in geneids: 
+	url = get_link_to_genome_browser(geneid)
+	transcripts = json_stripper(url)
 
 manage_excel(terms, geneids, transcripts)
 

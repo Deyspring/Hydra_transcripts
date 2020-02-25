@@ -1,12 +1,26 @@
 
 The Daily log
 -----------------
+2/24
+
+Important, remember to use "ig" as a test search term when prompted.
+The term(terms) loop is in both the hydra_ts_working script and the search_term module. Fix this redundancy
+line 
+File "/Users/katherinedey/Documents/GitHub/Hydra_transcripts/search_term.py", line 20, in search_geneid
+    keywordElem.send_keys(term)
+UnboundLocalError: local variable 'keywordElem' referenced before assignment
+
+2/23
+Search terms portion complete, a list of terms is produced
+
+2/22
+Still dealing with grief, Pardi died. Things did not go well at python group, I don't think I'll be going back for awhile. 
+
 2/19
 Got manage_xl.py module mostly working.  Things to work on: 
 
 Accept list of search terms. 
   - 50% done. Only accepts one term
-
 
 GeneID_json link
    url = get_link_to_genome_browser(geneid) Get this to work. 

@@ -8,7 +8,6 @@ def search_geneid(terms):
 	'''Input a search term and return a geneid'''
 	
 	geneids =[]
-	print ('geneids_list init: ',geneids)
 	# Find the keyword field and enter the term 
 	keyword_box = '/html/body/div[3]/form/table[4]/tbody/tr[2]/td[5]/input[1]'
 	try:
@@ -19,7 +18,6 @@ def search_geneid(terms):
 
 	for term in terms: 
 		keywordElem.send_keys(term)
-
 		button = '/html/body/div[3]/form/table[4]/tbody/tr[2]/td[5]/input[2]'
 		try:
 			buttonElm = browser.find_element_by_xpath(button).click()
@@ -38,17 +36,19 @@ def search_geneid(terms):
 		while should_continue : 
 			#row value indicates where geneid is
 			row +=1
-			try:
+			try :
 				result_link = '/html/body/div[3]/table[3]/tbody/tr/td[1]/form/table[1]/tbody/tr['+str(row)+']/td[2]/a'
-				print('Found result_link!')
+				print('Found result_link!' + str(row))
+				print(str(browser.find_element_by_xpath(result_link).text))
 			except:
 				print('End of result_links')
 				break
-
+			
+			time.sleep(2) 
 			geneid_elem = str(browser.find_element_by_xpath(result_link).text)
 			geneids.append((geneid_elem.split("="))[0]) # Why am i trying to split the geneid? ?? can't remember
 		
-		print('Found all geneids; put in list')
+		print('Found all geneids; put in list') #if no gene ids, give error code 
 
 		#Not sure if it's a good idea to close this window right now, I'll think about it. 
 		time.sleep(5) 
@@ -58,6 +58,7 @@ def search_geneid(terms):
 
 #for testing
 #Open Hydra web portal
+"""
 from selenium import webdriver
 
 browser = webdriver.Firefox()
@@ -72,6 +73,7 @@ transcripts = [[['bad','ger','bad','ger'],['bad2','ger2','bad2','ger2'],['snake'
 			   [['bad','ger','bad','ger'],['bad2','ger2','bad2','ger2'],['snake','oh','snake'],['mush','room','mush','room']]]
 
 search_geneid(terms)
+"""
 
 
 
