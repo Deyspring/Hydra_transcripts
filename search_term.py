@@ -2,12 +2,16 @@
 # Description needed
 
 import time
-
+from selenium import webdriver
 
 def search_geneid(terms): 
 	'''Input a search term and return a geneid'''
-	
-	geneids =[]
+
+	#Open Hydra webportal
+	browser = webdriver.Firefox()
+	browser.get('https://research.nhgri.nih.gov/hydra/pfam/')
+	window_first = browser.window_handles[0] # Store the window handle variable before clicking any links
+
 	# Find the keyword field and enter the term 
 	keyword_box = '/html/body/div[3]/form/table[4]/tbody/tr[2]/td[5]/input[1]'
 	try:
@@ -30,6 +34,7 @@ def search_geneid(terms):
 		time.sleep(3) 
 		
 		#Return geneid links produced by search
+		geneids =[]
 		row = 3
 		should_continue = True
 
@@ -38,33 +43,28 @@ def search_geneid(terms):
 			row +=1
 			try :
 				result_link = '/html/body/div[3]/table[3]/tbody/tr/td[1]/form/table[1]/tbody/tr['+str(row)+']/td[2]/a'
-				print('Found result_link!' + str(row))
-				print(str(browser.find_element_by_xpath(result_link).text))
+				#print('Found result_link!' + str(row))
+				#print(str(browser.find_element_by_xpath(result_link).text))
 			except:
 				print('End of result_links')
 				break
 			
-			time.sleep(2) 
+			time.sleep(1) 
 			geneid_elem = str(browser.find_element_by_xpath(result_link).text)
-			geneids.append((geneid_elem.split("="))[0]) # Why am i trying to split the geneid? ?? can't remember
+			geneids.append((geneid_elem.split("="))[0]) # split the geneid to provide id to make gene sequence page url 
 		
-		print('Found all geneids; put in list') #if no gene ids, give error code 
+		#print('Found all geneids; put in list') #if no gene ids, give error code 
 
-		#Not sure if it's a good idea to close this window right now, I'll think about it. 
+		#remove quotes to close the browser while testing the module
+		"""
 		time.sleep(5) 
 		browser.close()
+		"""
 	
-		return geneids
+		return browser,geneids
 
 #for testing
-#Open Hydra web portal
 """
-from selenium import webdriver
-
-browser = webdriver.Firefox()
-browser.get('https://research.nhgri.nih.gov/hydra/pfam/')
-window_first = browser.window_handles[0] # Store the window handle variable before clicking any links
-
 terms = ['ig', 'Ig_2']
 geneids = [['badger','badger2','mushroom','mushroom2'], ['monkey','rat','boar','ox','moon']]
 transcripts = [[['bad','ger','bad','ger'],['bad2','ger2','bad2','ger2'],['snake','oh','snake'],['mush','room','mush','room']],\

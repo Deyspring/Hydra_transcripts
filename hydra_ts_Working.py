@@ -4,9 +4,8 @@
 #is returned with the geneIds and lists of transcripts related to that search term. 
 
 import time
-from selenium import webdriver
 import manage_excel
-import get_link_to_genome_browser 
+import genome_browser_links 
 import search_term
 
 # Accept user input and return a list of terms 
@@ -16,26 +15,27 @@ term = None
 while term != 'done': 
 	print('Enter "done" when done entering terms')
 	term = input('Enter search term(s): ')
-	terms.append(term)
-
-print (terms)
-
-# Open Hydra web portal
-browser = webdriver.Firefox()
-print("browser")
-browser.get('https://research.nhgri.nih.gov/hydra/pfam/')
-window_first = browser.window_handles[0] # Store the window handle variable before clicking any links
+	if term != 'done':
+		terms.append(term)
+	else: 
+		pass
+print (terms) ### clean up 
 
 #Enter search terms and get geneids. 
 geneids = search_term.search_geneid(terms)  
 	
 for geneid in geneids: 
-	url = get_link_to_genome_browser(geneid)
+	url = genome_browser_links.gb_link(geneids)
 	transcripts = json_stripper(url)
 
 manage_excel(terms, geneids, transcripts)
 
-#TODO close browser windows
+# Close browser windows 
+time.sleep(5) 
+browser.close()
+browser.close()
+browser.close()
 
-
-#Give indication that proram is complete
+#Give indication that proram is complete while testing
+#remove when done
+print ("Complete")

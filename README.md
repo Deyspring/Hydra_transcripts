@@ -1,6 +1,18 @@
 
 The Daily log
 -----------------
+
+2/25 
+Tired today, need to go workout, eat out, etc. .
+X make sure "done" is not added to terms list. 
+X fixed keywordElem error, added browser opening code back to search_term module
+X terms redundancy fixed
+
+got search_terms and hydra_ts_Working to play nice, now they are crashing. I managed
+to make an infinite loop somehow when I got an error that seemed to be related to speed of reloading. 
+The geneome_browser_links module needs to be tested by itself. 
+
+
 2/24
 
 Important, remember to use "ig" as a test search term when prompted.
