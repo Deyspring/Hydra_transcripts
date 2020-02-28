@@ -1,6 +1,11 @@
 
 The Daily log
 -----------------
+2/26 
+
+Just a little work, maybe, tonight. 
+
+
 
 2/25 
 Tired today, need to go workout, eat out, etc. .

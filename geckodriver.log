@@ -1288,3 +1288,7 @@ JavaScript error: https://research.nhgri.nih.gov/hydra/pfam/js/ajax-dynamic-list
 1582681508583	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
 1582681510304	Marionette	INFO	Listening on port 54823
 1582681510334	Marionette	WARN	TLS certificate errors will be ignored for this session
+1582681752371	Marionette	INFO	Stopped listening on port 54686
+1582681754621	Marionette	INFO	Stopped listening on port 54577
+1582681757508	Marionette	INFO	Stopped listening on port 54452
+1582681761047	Marionette	INFO	Stopped listening on port 53935
