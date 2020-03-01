@@ -3,9 +3,11 @@
 
 import time
 from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
 
 def search_geneid(terms): 
 	'''Input a search term and return a geneid'''
+	# use Ig_4 to test 
 
 	#Open Hydra webportal
 	browser = webdriver.Firefox()
@@ -36,30 +38,30 @@ def search_geneid(terms):
 		#Return geneid links produced by search
 		geneids =[]
 		row = 3
-		should_continue = True
+		link = None
 
-		while should_continue : 
+		while not link: 
 			#row value indicates where geneid is
 			row +=1
 			try :
 				result_link = '/html/body/div[3]/table[3]/tbody/tr/td[1]/form/table[1]/tbody/tr['+str(row)+']/td[2]/a'
 				#print('Found result_link!' + str(row))
 				#print(str(browser.find_element_by_xpath(result_link).text))
-			except:
+			except NoSuchElementException as exception:
 				print('End of result_links')
 				break
 			
-			time.sleep(1) 
+			#time.sleep(.5) 
 			geneid_elem = str(browser.find_element_by_xpath(result_link).text)
 			geneids.append((geneid_elem.split("="))[0]) # split the geneid to provide id to make gene sequence page url 
-		
+			#print(".", end ="")
+
 		#print('Found all geneids; put in list') #if no gene ids, give error code 
 
 		#remove quotes to close the browser while testing the module
-		"""
+		
 		time.sleep(5) 
 		browser.close()
-		"""
 	
 		return browser,geneids
 

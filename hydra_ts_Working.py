@@ -31,11 +31,12 @@ for geneid in geneids:
 manage_excel(terms, geneids, transcripts)
 
 # Close browser windows 
+'''
 time.sleep(5) 
 browser.close()
 browser.close()
-browser.close()
+browser.close()'''
 
-#Give indication that proram is complete while testing
+#Give indication that progam is complete while testing
 #remove when done
 print ("Complete")

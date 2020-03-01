@@ -1,9 +1,19 @@
 
 The Daily log
 -----------------
+
+03/01 
+New month. I'm so depressed and a little manic. I forgot, seriously forgot, to take my meds on Thursday. I was mentally out of it all Friday and lost my purse. Luckily I found it. Saturday I bing watched "The Expanse". Today I'm going for a walk with KAren. I hope I feel better by Monday. 
+
+hydra_ts_working.py is not working. I have a problem with ending the while True loop when it's finding links. It finds the link and then, for some odd reason, can't add the term to the list. I solved this problem before but can't remember how I did it. 
+I thought it was a problem with loading, but now I'm not so sure. 
+
+
 2/26 
 
 Just a little work, maybe, tonight. 
+Ah. I don't think I do have an infinite loop, the script is just taking a long time. 
+A progress bar would be helpful here. :P 
 
 
 

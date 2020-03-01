@@ -9,6 +9,9 @@ import json, requests, sys, pprint
 
 def gb_link(geneids): 
 
+	pass
+	"""
+
 	'Takes a gene id and clicks through _View Gene in Genome Browser_ webpage to jbrowser'
 	
 	gene_sequence_page = browser.window_handles[0]
@@ -49,5 +52,6 @@ def gb_link(geneids):
 
 	print (jbrowse_url)
 	return jbrowse_url
+	"""
 
 
