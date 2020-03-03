@@ -40,28 +40,20 @@ def search_geneid(terms):
 		row = 3
 		link = None
 
-		while not link: 
-			#row value indicates where geneid is
-			row +=1
-			try :
-				result_link = '/html/body/div[3]/table[3]/tbody/tr/td[1]/form/table[1]/tbody/tr['+str(row)+']/td[2]/a'
-				#print('Found result_link!' + str(row))
-				#print(str(browser.find_element_by_xpath(result_link).text))
-			except NoSuchElementException as exception:
-				print('End of result_links')
-				break
-			
-			#time.sleep(.5) 
-			geneid_elem = str(browser.find_element_by_xpath(result_link).text)
-			geneids.append((geneid_elem.split("="))[0]) # split the geneid to provide id to make gene sequence page url 
-			#print(".", end ="")
-
-		#print('Found all geneids; put in list') #if no gene ids, give error code 
-
-		#remove quotes to close the browser while testing the module
 		
-		time.sleep(5) 
-		browser.close()
+		row +=1
+		result_link = '/html/body/div[3]/table[3]/tbody/tr/td[1]/form/table[1]/tbody/tr[*]/td[2]/a'
+		#time.sleep(.5) 
+		geneid_elem = str(browser.find_elements_by_xpath(result_link).text)
+		#geneid_elem = str(browser.find_element_by_xpath(result_link).text)
+		print(geneid_elem)
+		#geneids.append((geneid_elem.split("="))[0]) # split the geneid to provide id to make gene sequence page url 
+		print(".", end ="")
+		print('Found all geneids; put in list') #if no gene ids, give error code 
+		#remove quotes to close the browser while testing the module
+	
+		#time.sleep(5) 
+		#browser.close()
 	
 		return browser,geneids
 

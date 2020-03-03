@@ -1,6 +1,13 @@
 
 The Daily log
 -----------------
+03/02
+
+Super depressed, had to suppress sobs most of the afternoon. Hopefully will feel better after a good night's sleep. 
+
+Nope. I can't figure it out. There seems to be an automatic way to get a list of webelements using the selenium "find_elements_by_xpath(result_link).text".  The keys seem to be the element_s_ command and the .text module, which doesn't seem to work with element_s_ but works fine with element. 
+
+
 
 03/01 
 New month. I'm so depressed and a little manic. I forgot, seriously forgot, to take my meds on Thursday. I was mentally out of it all Friday and lost my purse. Luckily I found it. Saturday I bing watched "The Expanse". Today I'm going for a walk with KAren. I hope I feel better by Monday. 
