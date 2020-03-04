@@ -1,5 +1,6 @@
 # python!
-# Description needed
+# Takes a list of terms, enters them into the search box, clicks the button and then finds all the resulting
+# links and returns them a list, ** with the browser ** I'm not sure this module should do that, we'll see. 
 
 import time
 from selenium import webdriver
@@ -15,7 +16,7 @@ def search_geneid(terms):
 	window_first = browser.window_handles[0] # Store the window handle variable before clicking any links
 
 	# Find the keyword field and enter the term 
-	keyword_box = '/html/body/div[3]/form/table[4]/tbody/tr[2]/td[5]/input[1]'
+	keyword_box = '//div[3]/form/table[4]/tbody/tr[2]/td[5]/input[1]'
 	try:
 		keywordElem = browser.find_element_by_xpath(keyword_box)
 		print('Found keywordElem with that xpath!')
@@ -24,7 +25,7 @@ def search_geneid(terms):
 
 	for term in terms: 
 		keywordElem.send_keys(term)
-		button = '/html/body/div[3]/form/table[4]/tbody/tr[2]/td[5]/input[2]'
+		button = '//div[3]/form/table[4]/tbody/tr[2]/td[5]/input[2]'
 		try:
 			buttonElm = browser.find_element_by_xpath(button).click()
 			print ('Found buttonElm with that xpath')
@@ -39,26 +40,32 @@ def search_geneid(terms):
 		geneids =[]
 		row = 3
 		link = None
-
 		
-		row +=1
-		result_link = '/html/body/div[3]/table[3]/tbody/tr/td[1]/form/table[1]/tbody/tr[*]/td[2]/a'
-		#time.sleep(.5) 
-		geneid_elem = str(browser.find_elements_by_xpath(result_link).text)
-		#geneid_elem = str(browser.find_element_by_xpath(result_link).text)
-		print(geneid_elem)
-		#geneids.append((geneid_elem.split("="))[0]) # split the geneid to provide id to make gene sequence page url 
-		print(".", end ="")
+		#row +=1
+		result_link = '//div[3]/table[3]/tbody/tr/td[1]/form/table[1]/tbody/tr[*]/td[2]/a'
+
+		for link in browser.find_elements_by_xpath(result_link): 
+			geneid = link.text
+			geneids.append((geneid.split("="))[0]) # split the geneid to provide id to make gene sequence page url 
+			print(".", end ="")
+
+		print(".")
+		print(geneids)
 		print('Found all geneids; put in list') #if no gene ids, give error code 
-		#remove quotes to close the browser while testing the module
 	
-		#time.sleep(5) 
-		#browser.close()
+		time.sleep(5) 
+		browser.close()
 	
 		return browser,geneids
 
+		
 #for testing
 """
+for elem in browser.find_elements_by_xpath('.//span[@class = "gbts"]'):
+        print elem.text
+
+
+
 terms = ['ig', 'Ig_2']
 geneids = [['badger','badger2','mushroom','mushroom2'], ['monkey','rat','boar','ox','moon']]
 transcripts = [[['bad','ger','bad','ger'],['bad2','ger2','bad2','ger2'],['snake','oh','snake'],['mush','room','mush','room']],\

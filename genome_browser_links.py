@@ -9,8 +9,7 @@ import json, requests, sys, pprint
 
 def gb_link(geneids): 
 
-	pass
-	"""
+	
 
 	'Takes a gene id and clicks through _View Gene in Genome Browser_ webpage to jbrowser'
 	
@@ -39,7 +38,7 @@ def gb_link(geneids):
 
 	try:
 		JulianoCheckbox = browser.find_element_by_xpath(
-		'/html/body/div[2]/div[4]/div[5]/div[2]/div/div/label[2]/input').click()
+		'//div[2]/div[4]/div[5]/div[2]/div/div/label[2]/input').click()
 		print ('Found JulianoCheckbox')	
 	except:
 		print('Was not able to find JulianoCheckbox')
@@ -52,6 +51,6 @@ def gb_link(geneids):
 
 	print (jbrowse_url)
 	return jbrowse_url
-	"""
+
 
 

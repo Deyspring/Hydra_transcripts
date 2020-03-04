@@ -1,8 +1,25 @@
 
 The Daily log
 -----------------
-03/02
+03/03 
+Voted. Haunted by ruminatingthoughts about unexpected afternoon fete by Richard. I was late comimg back from lunch. I do not want to be thinking about work right now. I have little free time now and I don't want to spend it thinking about work!!!  Did feel more energetic this morning, but I'm not sure if that's because I accidentally took my thyroid med in the evening. Sometimes this helps me sleep deeper. I'm not sure if that was the case last night. Anyways, save this experiment for the weekend. 
 
+Back to the work with element_s_ 
+*Reminder, absolute xpaths are a super bad idea and you're using them. Change them to relative paths. 
+
+As Mark Twain said" I did not have time to write a short letter, so I wrote a long one" 
+
+The solution was super simple, fast and compact. I now have a tidy search_terms module
+
+-Changed most absolute xpaths. 
+
+Todo
+- Genome browser links module. 
+- should the search module return a browser? This seems like a bad idea and also maybe not possible. 
+- it seems like it make more sense for the main program to open the browser and control things. 
+- Let's look into that. 
+
+03/02
 Super depressed, had to suppress sobs most of the afternoon. Hopefully will feel better after a good night's sleep. 
 
 Nope. I can't figure it out. There seems to be an automatic way to get a list of webelements using the selenium "find_elements_by_xpath(result_link).text".  The keys seem to be the element_s_ command and the .text module, which doesn't seem to work with element_s_ but works fine with element. 
