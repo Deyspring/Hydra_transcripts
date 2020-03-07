@@ -1,6 +1,20 @@
 
 The Daily log
 -----------------
+03/06 
+No journaling in my regular journal. I'm not sure if I'm just exhausted by the effort, manic and not doing it, avoiding thinking about things(very possible) because of the anxiety. Anyways, having a super crappy week, not enjoying life and generally just trying to hang in there. 
+
+So. 
+
+- fix genome browser links module
+
+-Not sure how to handle the window switching issue between the modules
+-Maybe I can pass a browser link and module?
+-It may be easier to change the program into one big program instead of having modules, other than the excell module. 
+- Yeah. Let's change it to one large program and just get the damn thing working maybe. 
+
+
+
 03/03 
 Voted. Haunted by ruminatingthoughts about unexpected afternoon fete by Richard. I was late comimg back from lunch. I do not want to be thinking about work right now. I have little free time now and I don't want to spend it thinking about work!!!  Did feel more energetic this morning, but I'm not sure if that's because I accidentally took my thyroid med in the evening. Sometimes this helps me sleep deeper. I'm not sure if that was the case last night. Anyways, save this experiment for the weekend. 
 

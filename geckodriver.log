@@ -1647,3 +1647,4 @@ JavaScript error: https://eus.rubiconproject.com/usync.html?gdpr=0&gdpr_consent=
 1583297738910	Marionette	INFO	Listening on port 64406
 1583297738925	Marionette	WARN	TLS certificate errors will be ignored for this session
 1583297750861	Marionette	INFO	Stopped listening on port 64406
+1583555625607	Marionette	INFO	Stopped listening on port 60267

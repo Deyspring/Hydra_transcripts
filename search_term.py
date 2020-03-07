@@ -4,7 +4,6 @@
 
 import time
 from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException
 
 def search_geneid(terms): 
 	'''Input a search term and return a geneid'''
@@ -13,7 +12,7 @@ def search_geneid(terms):
 	#Open Hydra webportal
 	browser = webdriver.Firefox()
 	browser.get('https://research.nhgri.nih.gov/hydra/pfam/')
-	window_first = browser.window_handles[0] # Store the window handle variable before clicking any links
+	hydra_homepage = browser.window_handles[0] # Store the window handle variable before clicking any links
 
 	# Find the keyword field and enter the term 
 	keyword_box = '//div[3]/form/table[4]/tbody/tr[2]/td[5]/input[1]'
@@ -41,7 +40,6 @@ def search_geneid(terms):
 		row = 3
 		link = None
 		
-		#row +=1
 		result_link = '//div[3]/table[3]/tbody/tr/td[1]/form/table[1]/tbody/tr[*]/td[2]/a'
 
 		for link in browser.find_elements_by_xpath(result_link): 
@@ -53,18 +51,14 @@ def search_geneid(terms):
 		print(geneids)
 		print('Found all geneids; put in list') #if no gene ids, give error code 
 	
-		time.sleep(5) 
-		browser.close()
+	#Uncomment for module testing
+	#	time.sleep(5) 
+	#	browser.close()
 	
-		return browser,geneids
+		return geneids, hydra_homepage
 
-		
 #for testing
 """
-for elem in browser.find_elements_by_xpath('.//span[@class = "gbts"]'):
-        print elem.text
-
-
 
 terms = ['ig', 'Ig_2']
 geneids = [['badger','badger2','mushroom','mushroom2'], ['monkey','rat','boar','ox','moon']]
