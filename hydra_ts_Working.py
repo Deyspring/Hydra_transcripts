@@ -4,15 +4,10 @@
 #is returned with the geneIds and lists of transcripts related to that search term. 
 
 import time
+from selenium import webdriver
 import manage_excel
 import genome_browser_links 
-import search_term
-
-#Open Hydra webportal
-browser = webdriver.Firefox()
-browser.get('https://research.nhgri.nih.gov/hydra/pfam/')
-# Store homepage window handle variable before clicking any links
-hydra_homepage = browser.window_handles[0] 
+import search_term 
 
 # Accept user input and return a list of terms 
 terms =[]
@@ -33,7 +28,7 @@ geneids = search_term.search_geneid(terms)
 #Make urls using geneids to click to "View Genome" page
 #Click through that page to get transcripts from the JSON browser
 for geneid in geneids: 
-	url = genome_browser_links.gb_link(geneids) 
+	url = genome_browser_links.gb_link(geneid) 
 	transcripts = json_stripper(url)
 
 #Put all terms, geneids and transcripts into an excel file

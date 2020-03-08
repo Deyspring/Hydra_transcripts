@@ -1,6 +1,12 @@
 
 The Daily log
 -----------------
+03/07 
+Feeling a little better emotionally today, I did yoga for an hour, trama exercises and hung out with Lucas. His team was ranked second in the Robotics trials. I'm physically tired and feeling peckish. May get a banana before bed. 
+
+Ok. Window switching modules. 
+
+
 03/06 
 No journaling in my regular journal. I'm not sure if I'm just exhausted by the effort, manic and not doing it, avoiding thinking about things(very possible) because of the anxiety. Anyways, having a super crappy week, not enjoying life and generally just trying to hang in there. 
 

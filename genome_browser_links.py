@@ -7,11 +7,16 @@ import time
 from selenium import webdriver
 import json, requests, sys, pprint
 
-def gb_link(geneids): 
+def gb_link(geneid): 
 	'Takes a gene id and clicks through _View Gene in Genome Browser_ webpage to jbrowser'
-	
+	print ("gb_link function\n")
 	browser = webdriver.Firefox()
-	
+
+	url = 'https://research.nhgri.nih.gov/hydra/genewiki/gene_page.cgi?gene=' + geneid
+	browser.get(url)
+	time.sleep(1)
+	print('View_gene page')
+
 	# Click the 'View Gene in Genome Browser link' - it seems to be the only way to get the correct json file
 	try:
 		link_to_genome = browser.find_element_by_link_text('View Gene in Genome Browser').click()
@@ -19,12 +24,12 @@ def gb_link(geneids):
 	except:
 		print('Was not able to find View_gene_elem')
 
-	view_in_browser_page = browser.window_handles[1] 
+	view_in_browser_page = browser.window_handles[0] # Not sure this will work
 	#browser.close()
 
 	###JBrowser page: window_second
-	Jbrowser_page = browser.window_handles[2] # After clicking the result button, store the window handle variable of second page
-	browser.switch_to.window(Jbrowser_page)
+	jbrowser_page = browser.window_handles[1] # After clicking the result button, store the window handle variable of second page
+	browser.switch_to.window(jbrowser_page)
 
 	# This is crucial!!! If the browser does not have time to load the second page, 
 	# the handle will not be reset to the correct page. Sleep time may need to be lengthened if browser takes too long to load
@@ -40,9 +45,9 @@ def gb_link(geneids):
  
 	browser.refresh()
 
-	short_gene_id = gene_id.split('.')
+	short_geneid = geneid.split('.')
 	jbrowse_url = 'https://research.nhgri.nih.gov/hydra/jbrowse/data/tracks/aepLRv2_splign/'\
-				  + short_gene_id[0] + '/trackData.json'
+				  + short_geneid[0] + '/trackData.json'
 
 
 	print (jbrowse_url)

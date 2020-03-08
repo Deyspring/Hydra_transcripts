@@ -12,7 +12,8 @@ def search_geneid(terms):
 	#Open Hydra webportal
 	browser = webdriver.Firefox()
 	browser.get('https://research.nhgri.nih.gov/hydra/pfam/')
-	hydra_homepage = browser.window_handles[0] # Store the window handle variable before clicking any links
+	print ("Hydra_homepage")
+	#hydra_homepage = browser.window_handles[0] # Store the window handle variable before clicking any links
 
 	# Find the keyword field and enter the term 
 	keyword_box = '//div[3]/form/table[4]/tbody/tr[2]/td[5]/input[1]'
@@ -48,14 +49,14 @@ def search_geneid(terms):
 			print(".", end ="")
 
 		print(".")
-		print(geneids)
-		print('Found all geneids; put in list') #if no gene ids, give error code 
+		#print(geneids)
+		print('Found all geneids; put in list \n') #if no gene ids, give error code 
 	
 	#Uncomment for module testing
 	#	time.sleep(5) 
 	#	browser.close()
 	
-		return geneids, hydra_homepage
+		return geneids #,hydra_homepage
 
 #for testing
 """
