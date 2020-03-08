@@ -8,6 +8,7 @@ from selenium import webdriver
 import manage_excel
 import genome_browser_links 
 import search_term 
+import json_stripper
 
 # Accept user input and return a list of terms 
 terms =[]
@@ -29,7 +30,7 @@ geneids = search_term.search_geneid(terms)
 #Click through that page to get transcripts from the JSON browser
 for geneid in geneids: 
 	url = genome_browser_links.gb_link(geneid) 
-	transcripts = json_stripper(url)
+	transcripts = json_stripper.transcripts_data(url)
 
 #Put all terms, geneids and transcripts into an excel file
 manage_excel(terms, geneids, transcripts)

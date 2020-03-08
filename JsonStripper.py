@@ -4,7 +4,7 @@
 
 import json, requests, sys, pprint
 
-def transcripts_from_Json(json_url): 
+def transcripts_from_Json(url): 
 	# Download the JSON data from Hydra Portal's API using a url
 
 	response = requests.get(json_url)

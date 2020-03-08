@@ -7,11 +7,9 @@
 
 import json, requests, sys, pprint
 
-def transcripts_from_Json(json_url): 
+def transcripts_from_Json(url): 
 	# Download the JSON data from Hydra Portal's API using a url
 	
-	pass # stub for testing
-'''
 	transcripts =[]
 	response = requests.get(json_url)
 	response.raise_for_status()
@@ -38,7 +36,7 @@ list_of_transcripts = transcripts_from_Json(json_url)
 
 #Sc4wPfr_844	102021	102494	t12588aep|97511		+		
 
-'''		
+	
 
  
 

@@ -6,6 +6,8 @@ Feeling a little better emotionally today, I did yoga for an hour, trama exercis
 
 Ok. Window switching modules. 
 
+Lots of progress! Finally at the Json browser. I got stuck in an infinite loop, the while True loop got me. See if the find by element_s_ trick works again. 
+
 
 03/06 
 No journaling in my regular journal. I'm not sure if I'm just exhausted by the effort, manic and not doing it, avoiding thinking about things(very possible) because of the anxiety. Anyways, having a super crappy week, not enjoying life and generally just trying to hang in there. 
