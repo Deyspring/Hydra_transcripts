@@ -33,7 +33,7 @@ for geneid in geneids:
 	transcripts = json_stripper.transcripts_data(url)
 
 #Put all terms, geneids and transcripts into an excel file
-manage_excel(terms, geneids, transcripts)
+manage_excel.mng_xl(terms, geneids, transcripts)
 
 # Close browser windows 
 '''

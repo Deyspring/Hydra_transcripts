@@ -1,21 +1,27 @@
 
 The Daily log
 -----------------
+03/10
+Today's todos: 
+Fixed a bunch of things and program runs until end, saving a spreadsheet. 
+  - Transcripts are not being collected and stripped properly, I'm getting duplicates of the same transcript for each geneid, which is incorrect. 
+  - The program is opening multiple windows and not closing all of them. This needs to be addressed as I have a dozen open versions of Firefox on my desktop now. Some did close properly though, which is encouraging. 
+  - When the spreadsheet is made, it saves the first letter of a geneid spread down rows and the numerals of the gene id in another set of rows. WTF? This spreadsheet was working, so it must be getting bad data. Let's see if fixing problem #2 fixes the spreadsheet. 
+
+03/8 
+Stuck on iterating over the json text object and extracting the transcripts. I'm not sure why I thought I had solved the problem earlier. The dictionary contains nested lists and the lists contain the same transcript numbers multiple times. I really thought there was a simple way to strip the transcripts out without having to do a comparison to previous items to see if they are the same. 
+
+
 03/07 
-Feeling a little better emotionally today, I did yoga for an hour, trama exercises and hung out with Lucas. His team was ranked second in the Robotics trials. I'm physically tired and feeling peckish. May get a banana before bed. 
 
 Ok. Window switching modules. 
 
-Lots of progress! Finally at the Json browser. I got stuck in an infinite loop, the while True loop got me. See if the find by element_s_ trick works again. 
+Lots of progress! Finally at the Json browser. I got stuck in an infinite loop, the while True loop got me. See if the find by element_s_ trick works again.  
 
 
 03/06 
-No journaling in my regular journal. I'm not sure if I'm just exhausted by the effort, manic and not doing it, avoiding thinking about things(very possible) because of the anxiety. Anyways, having a super crappy week, not enjoying life and generally just trying to hang in there. 
-
-So. 
 
 - fix genome browser links module
-
 -Not sure how to handle the window switching issue between the modules
 -Maybe I can pass a browser link and module?
 -It may be easier to change the program into one big program instead of having modules, other than the excell module. 
@@ -24,15 +30,11 @@ So.
 
 
 03/03 
-Voted. Haunted by ruminatingthoughts about unexpected afternoon fete by Richard. I was late comimg back from lunch. I do not want to be thinking about work right now. I have little free time now and I don't want to spend it thinking about work!!!  Did feel more energetic this morning, but I'm not sure if that's because I accidentally took my thyroid med in the evening. Sometimes this helps me sleep deeper. I'm not sure if that was the case last night. Anyways, save this experiment for the weekend. 
 
 Back to the work with element_s_ 
-*Reminder, absolute xpaths are a super bad idea and you're using them. Change them to relative paths. 
-
+*Reminder, absolute xpaths are a super bad idea and you're using them. Change them to relative paths.
 As Mark Twain said" I did not have time to write a short letter, so I wrote a long one" 
-
 The solution was super simple, fast and compact. I now have a tidy search_terms module
-
 -Changed most absolute xpaths. 
 
 Todo
@@ -42,15 +44,11 @@ Todo
 - Let's look into that. 
 
 03/02
-Super depressed, had to suppress sobs most of the afternoon. Hopefully will feel better after a good night's sleep. 
-
 Nope. I can't figure it out. There seems to be an automatic way to get a list of webelements using the selenium "find_elements_by_xpath(result_link).text".  The keys seem to be the element_s_ command and the .text module, which doesn't seem to work with element_s_ but works fine with element. 
 
 
 
 03/01 
-New month. I'm so depressed and a little manic. I forgot, seriously forgot, to take my meds on Thursday. I was mentally out of it all Friday and lost my purse. Luckily I found it. Saturday I bing watched "The Expanse". Today I'm going for a walk with KAren. I hope I feel better by Monday. 
-
 hydra_ts_working.py is not working. I have a problem with ending the while True loop when it's finding links. It finds the link and then, for some odd reason, can't add the term to the list. I solved this problem before but can't remember how I did it. 
 I thought it was a problem with loading, but now I'm not so sure. 
 

@@ -8,7 +8,7 @@ import time
 if __name__ == '__main__': #not sure what to name instead of _main_ for clarity 
   main()
 
-def manage_excel(terms, geneids, transcripts): 
+def mng_xl(terms, geneids, transcripts): 
 	'''Excel file with a title based on a website and the date'''
 
 	#TODO? make these names and link changable in a gui? 

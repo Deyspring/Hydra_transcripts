@@ -49,7 +49,7 @@ def gb_link(geneid):
 	jbrowse_url = 'https://research.nhgri.nih.gov/hydra/jbrowse/data/tracks/aepLRv2_splign/'\
 				  + short_geneid[0] + '/trackData.json'
 
-
+	print ("jbrows_url")
 	print (jbrowse_url)
 	return jbrowse_url
 
