@@ -1,6 +1,11 @@
 
 The Daily log
 -----------------
+03/11
+Made a lot of progress, the excel module is splitting the geneid into separate letters, I think I've fixed this. 
+
+Biggest issue: the json stripper is stripping the transcripts completely wrong from the json file. I will have to write a little piece of code to deal with this. There are multiple transcripts in each json file that are duplictes of each other, so I'll have to write a script to compair any new stripped items to older items before appending them to a list. 
+
 03/10
 Today's todos: 
 Fixed a bunch of things and program runs until end, saving a spreadsheet. 

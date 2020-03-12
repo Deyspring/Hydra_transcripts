@@ -1,57 +1,41 @@
-{'nclist': [[0, 4, 6, 0, 'A', 'S', 't5766aep|23587', 't5766aep|23587', 'gene.t5766aep|23587', 'm', [[1, 1, 1, 0, 'A', 'S', 'CDS', 't5766aep|23587'], 
-[1, 2, 2, 0, 'A', 'S', 'CDS', 't5766aep|23587'], 
-[1, 1, 1, 0, 'A', 'S', 'e', 't5766aep|23587'], 
-[1, 67045, 67350, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'CDS', 't5766aep|23587'], 
-[1, 33316, 33636, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'CDS', 't5766aep|23587'], 
-[1, 25854, 26097, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't5766aep|23587'], 
-[1, 20610, 20805, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'CDS', 't5766aep|23587'], 
-[1, 20955, 21144, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't5766aep|23587'], 
-[1, 36379, 36497, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't5766aep|23587'], 
-[1, 20610, 20805, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't5766aep|23587'], 
-[1, 51164, 51311, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'CDS', 't5766aep|23587'], 
-[1, 47206, 47368, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't5766aep|23587'], 
-[1, 25854, 26097, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'CDS', 't5766aep|23587'], 
-[1, 20955, 21144, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'CDS', 't5766aep|23587'], 
-[1, 50874, 51039, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'CDS', 't5766aep|23587'], 
-[1, 4123, 4382, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't5766aep|23587'], 
-[1, 21230, 21479, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'CDS', 't5766aep|23587'], 
-[1, 26179, 26446, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't5766aep|23587'], 
-[1, 12249, 12447, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't5766aep|23587'], 
-[1, 67045, 67350, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't5766aep|23587'], 
-[1, 50874, 51039, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't5766aep|23587'], 
-[1, 11928, 12123, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'CDS', 't5766aep|23587'], 
-[1, 66590, 66681, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'CDS', 't5766aep|23587'], 
-[1, 36379, 36497, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'CDS', 't5766aep|23587'], 
-[1, 33316, 33636, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't5766aep|23587'], 
-[1, 47206, 47368, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'CDS', 't5766aep|23587'], 
-[1, 66590, 66681, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't5766aep|23587'], 
-[1, 51164, 51311, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't5766aep|23587'], 
-[1, 21230, 21479, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't5766aep|23587'], 
-[1, 4123, 4382, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'CDS', 't5766aep|23587']],
 
- {'Sublist': 
- [
- [0, 60137, 60623, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 't34681aep|23562', 't34681aep|23562', 'gene.t34681aep|23562', 'mRNA', 
- [
- [1, 60137, 60623, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'CDS', 't34681aep|23562'], 
- [1, 60137, 60623, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't34681aep|23562']]]]}
- ], 
+transcripts_text_file from transcripts_data
 
- [0, 87443, 121620, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 't19864aep|23516', 't19864aep|23516', 'gene.t19864aep|23516', 'mRNA', 
- [
- [1, 107265, 107384, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'CDS', 't19864aep|23516'], 
- [1, 121467, 121620, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'CDS', 't19864aep|23516'], 
- [1, 121227, 121387, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't19864aep|23516'], 
- [1, 105106, 105286, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't19864aep|23516'], 
- [1, 121467, 121620, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't19864aep|23516'], 
- [1, 104609, 104823, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't19864aep|23516'], 
- [1, 121227, 121387, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'CDS', 't19864aep|23516'], 
- [1, 104942, 105041, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'CDS', 't19864aep|23516'], 
- [1, 87443, 87761, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't19864aep|23516'], 
- [1, 105106, 105286, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'CDS', 't19864aep|23516'], 
- [1, 104609, 104823, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'CDS', 't19864aep|23516'], 
- [1, 104942, 105041, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't19864aep|23516'], 
- [1, 107265, 107384, 0, 'AEP_SPLIGN', 'Sc4wPfr_172', 'exon', 't19864aep|23516'], 
+{'nclist': 
+[[0, 19861, 46448, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 't37984aep|65624', 't37984aep|65624', 'gene.t37984aep|65624', 'mRNA', 
 
+[[1, 19861, 20176, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't37984aep|65624'], 
+[1, 20360, 20498, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't37984aep|65624'], 
+[1, 46257, 46448, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't37984aep|65624'], 
+[1, 19861, 20176, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't37984aep|65624'], 
+[1, 46257, 46448, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't37984aep|65624'], 
+[1, 20360, 20498, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't37984aep|65624']]], 
 
-{ nclist : [[list,transcript[[list,transcript],[list,transcript],list]]]}, {'sublist: [[list',[[list],[list],[list]]}
+[0, 89604, 100802, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 't12260aep|65616', 't12260aep|65616', 'gene.t12260aep|65616', 'mRNA', [[1, 100411, 100802, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't12260aep|65616'], 
+[1, 89604, 89797, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't12260aep|65616'], 
+[1, 89604, 89797, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't12260aep|65616'], 
+[1, 99975, 100113, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't12260aep|65616'], 
+[1, 99975, 100113, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't12260aep|65616'], 
+[1, 100411, 100802, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't12260aep|65616']], 
+
+{'Sublist': [[0, 91687, 91932, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 't30006aep|-65619', 't30006aep|-65619', 'gene.t30006aep|-65619', 'mRNA', [[1, 91687, 91932, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't30006aep|-65619'], 
+[1, 91687, 91932, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't30006aep|-65619']]], 
+[0, 95242, 95658, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 't36740aep|65623', 't36740aep|65623', 'gene.t36740aep|65623', 'mRNA', 
+[[1, 95242, 95658, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't36740aep|65623'], [1, 95242, 95658, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't36740aep|65623']]]]}]], 
+
+'classes': [{'isArrayAttr': {'Subfeatures': 1}, 
+'attributes': ['Start', 'End', 'Strand', 'Source', 'Seq_id', 'Load_id', 'Name', 'Parent_id', 'Type', 'Subfeatures']}, {'isArrayAttr': {}, 
+'attributes': ['Start', 'End', 'Strand', 'Source', 'Seq_id', 'Type', 'Parent_id']}, {'isArrayAttr': {'Sublist': 1}, 'attributes': ['Start', 'End', 'Chunk']}], 
+'maxEnd': 100802, 'count': 4, 
+'lazyClass': 2, 
+'urlTemplate': 'lf-{Chunk}.json', 
+'minStart': 19861}
+
+'''
+	for nested_list in transcripts_text_file:
+		print ("nested list:", nested_list "\n")
+		#This complicated selector is necessary because the dictionary is nested. 
+		transcript = (transcripts_text_file['nclist'][0][7]).split('|')[0] # I think I'm selecting the same thing again and again
+		print ("transcript:", transcript,"\n") 
+		transcripts.append(transcript) 
+'''

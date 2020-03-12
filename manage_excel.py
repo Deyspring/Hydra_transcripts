@@ -37,15 +37,15 @@ def mng_xl(terms, geneids, transcripts):
 	row_num = 6
 	col_num = 1
 
-	for term, geneids,transcript_sets in zip(terms,geneids,transcripts): 
+	for term, geneid,transcript_sets in zip(terms,geneids,transcripts): 
 		col_num = 1
 		# Search terms should start at cell A7
 		sheet.cell(row=row_num, column=col_num).value = term 
-		for geneid,transcripts in zip(geneids,transcript_sets): 
+		for geneid in geneids: 
 			row_num += 1
 			col_num = 1
 			sheet.cell(row=row_num, column=col_num).value = geneid
-			for transcript in transcripts:
+			for transcript in transcript_set:
 				col_num +=1
 				sheet.cell(row=row_num, column=col_num).value = transcript
 	

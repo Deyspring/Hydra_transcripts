@@ -9,7 +9,7 @@ from selenium import webdriver
 def transcripts_data(url): 
 	# Download the JSON data from the Hydra Portal's API using a url and get the transcripts from it. 
 	browser = webdriver.Firefox()
-	
+	 
 	print ("Json_stripper module")
 	transcripts =[]
 	response = requests.get(url)
@@ -21,20 +21,21 @@ def transcripts_data(url):
 	#print("transcripts_text_file from transcripts_data")
 	#print (transcripts_text_file)
 
-	for nested_list in transcripts_text_file:
+	"""for nested_list in transcripts_text_file:
+		print ("nested list:", nested_list, "\n")
 		#This complicated selector is necessary because the dictionary is nested. 
-		transcript = (transcripts_text_file['nclist'][0][7]).split('|')[0] 
+		transcript = (transcripts_text_file['nclist'][0][7]).split('|')[0] # I think I'm selecting the same thing again and again
+		print ("transcript:", transcript,"\n") 
 		transcripts.append(transcript) 
+	"""
+	transcripts = [[['bad','ger','bad','ger'],['bad2','ger2','bad2','ger2'],['snake','oh','snake'],['mush','room','mush','room']],\
+			   [['bad','ger','bad','ger'],['bad2','ger2','bad2','ger2'],['snake','oh','snake'],['mush','room','mush','room']],\
+			   [['bad','ger','bad','ger'],['bad2','ger2','bad2','ger2'],['snake','oh','snake'],['mush','room','mush','room']],\
+			   [['bad','ger','bad','ger'],['bad2','ger2','bad2','ger2'],['snake','oh','snake'],['mush','room','mush','room']]]
+
 
 	browser.close()
-	print (transcripts)
 	return transcripts
-
-#This must be a freshly made json url, or the test won't work
-#json_url = 'https://research.nhgri.nih.gov/hydra/jbrowse/data/tracks/aepLRv2_splign/Sc4wPfr_844/trackData.json'
-#list_of_transcripts = transcripts_from_Json(json_url)
-
-#Sc4wPfr_844	102021	102494	t12588aep|97511		+		
 
 	
 

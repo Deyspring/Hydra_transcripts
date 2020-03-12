@@ -34,7 +34,7 @@ def gb_link(geneid):
 	# This is crucial!!! If the browser does not have time to load the second page, 
 	# the handle will not be reset to the correct page. Sleep time may need to be lengthened if browser takes too long to load
 	# this may be a good thing to put in a try except to retry finding the link if it is not found immediately. 
-	time.sleep(8)
+	time.sleep(10)
 
 	try:
 		JulianoCheckbox = browser.find_element_by_xpath(
@@ -49,8 +49,12 @@ def gb_link(geneid):
 	jbrowse_url = 'https://research.nhgri.nih.gov/hydra/jbrowse/data/tracks/aepLRv2_splign/'\
 				  + short_geneid[0] + '/trackData.json'
 
-	print ("jbrows_url")
-	print (jbrowse_url)
+	time.sleep(1)
+	browser.close()
+
+	#print ("jbrowse_url")
+	print ("geneID")
+	print (short_geneid[0])
 	return jbrowse_url
 
 

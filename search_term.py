@@ -53,8 +53,8 @@ def search_geneid(terms):
 		print('Found all geneids; put in list \n') #if no gene ids, give error code 
 	
 	#Uncomment for module testing
-		#time.sleep(1) 
-		#browser.close()
+		time.sleep(1) 
+		browser.close()
 	
 		return geneids #,hydra_homepage
 
