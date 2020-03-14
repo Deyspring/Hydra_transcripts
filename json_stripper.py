@@ -20,22 +20,29 @@ def transcripts_data(url):
 	transcripts_text_file = transcripts_data['intervals']
 	#print("transcripts_text_file from transcripts_data")
 	#print (transcripts_text_file)
+	transcripts_info = (transcripts_text_file['nclist']) #
 
-	"""for nested_list in transcripts_text_file:
+	for nested_list in transcripts_info:
 		print ("nested list:", nested_list, "\n")
 		#This complicated selector is necessary because the dictionary is nested. 
-		transcript = (transcripts_text_file['nclist'][0][7]).split('|')[0] # I think I'm selecting the same thing again and again
+		if 't*' in nested_list: 
+			transcript = t*.split('|')[0] # I think I'm selecting the same thing again and again
 		print ("transcript:", transcript,"\n") 
 		transcripts.append(transcript) 
-	"""
+
+	browser.close()
+	return transcripts
+
+	
+"""
 	transcripts = [[['bad','ger','bad','ger'],['bad2','ger2','bad2','ger2'],['snake','oh','snake'],['mush','room','mush','room']],\
 			   [['bad','ger','bad','ger'],['bad2','ger2','bad2','ger2'],['snake','oh','snake'],['mush','room','mush','room']],\
 			   [['bad','ger','bad','ger'],['bad2','ger2','bad2','ger2'],['snake','oh','snake'],['mush','room','mush','room']],\
 			   [['bad','ger','bad','ger'],['bad2','ger2','bad2','ger2'],['snake','oh','snake'],['mush','room','mush','room']]]
 
 
-	browser.close()
-	return transcripts
+transcripts_data()
+"""
 
 	
 
