@@ -21,29 +21,25 @@ while term != 'done':
 		terms.append(term)
 	else: 
 		pass
-print (terms) ### clean up 
 
 #Enter search terms on the Hydra homepage and get the geneids. 
 geneids = search_term.search_geneid(terms)  
-print("geneID:", geneids,'\n')
 
 #Make urls using geneids to click to "View Genome" page
 #Click through that page to get transcripts from the JSON browser
+transcripts =[]
 for geneid in geneids: 
 	url = genome_browser_links.gb_link(geneid) 
-	print ("url from genome_browser_links",url,'\n')
-	transcripts = json_stripper.transcripts_data(url)
+	transcript_set = json_stripper.transcripts_data(url)
+	transcripts.append(transcript_set)
+
+print("hydra_ts terms: \n", terms)
+print("hydra_ts genids:\n", geneids)
+print("hydra_ts transripts:\n", transcripts)
 
 #Put all terms, geneids and transcripts into an excel file
 manage_excel.mng_xl(terms, geneids, transcripts)
 
-# Close browser windows 
-
-time.sleep(5) 
-browser.close()
-browser.close()
-browser.close()
-
 #Give indication that progam is complete while testing
 #remove when done
-print ("Complete")
+print ('Complete')

@@ -1,0 +1,42 @@
+To iterate over a nested data structure you need to either know the exact structure (number of levels, data type at each level) or use recursion. Python won't automatically iterate over sub-lists for you.
+If you knew for sure that every single file would have the exact same structure as your example, you could directly access transcripts_text_file['nclist'][0][6], .... , transcripts_text_file['nclist'][1][11]['Sublist'][0][6], etc. But that still assumes that your first element is a list and your second element is a list containing a dictionary of nested lists. If those numbers vary you need to start checking types and iterating.
+At that point you might as well use recursion. Define a function that takes a list and an accumulator and checks each list element, starting with the outermost list. If it's a string that meets your criteria, add it to your accumulator. If it isn't, see if it's a map or a list and then search that recursively.
+Complicating factors: Strings are iterable. Lists and dictionaries are iterable, but 'for i in mylist' and 'for i in mydict' work differently.
+
+Or you could take a totally different approach. Since you're just trying to extract strings that match a pattern and the structure of the data isn't important, you could search response.text directly using regex. That's what I would do. 😀
+
+My solutions
+||
+\/
+
+||
+\/
+
+||
+\/
+
+||
+\/
+
+||
+\/
+
+************
+Recursive
+************
+def find_transcripts(source, acc=set()):
+    for s in scripts:
+        if isinstance(s, str) and s[0] == 't' and 'aep' in s:
+            acc.add(s.split('|')[0])
+        elif isinstance(s, list):
+            find_transcripts(s, acc)
+        elif isinstance(s, dict):
+            find_transcripts(s.values(), acc)
+    return acc
+
+********
+Regex
+********
+import re
+pattern = re.compile('t\d+aep')
+transcripts = set(pattern.findall(response.text)

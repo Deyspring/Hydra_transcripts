@@ -12,9 +12,7 @@ def search_geneid(terms):
 	#Open Hydra webportal
 	browser = webdriver.Firefox()
 	browser.get('https://research.nhgri.nih.gov/hydra/pfam/')
-	print ("Hydra_homepage")
-	#hydra_homepage = browser.window_handles[0] # Store the window handle variable before clicking any links
-
+	
 	# Find the keyword field and enter the term 
 	keyword_box = '//div[3]/form/table[4]/tbody/tr[2]/td[5]/input[1]'
 	try:
@@ -46,21 +44,14 @@ def search_geneid(terms):
 		for link in browser.find_elements_by_xpath(result_link): 
 			geneid = link.text
 			geneids.append((geneid.split("="))[0]) # split the geneid to provide id to make gene sequence page url 
-			print(".", end ="")
-
-		print(".")
-		#print(geneids)
-		print('Found all geneids; put in list \n') #if no gene ids, give error code 
-	
-	#Uncomment for module testing
-		time.sleep(1) 
+			
+		#time.sleep(1) 
 		browser.close()
-	
-		return geneids #,hydra_homepage
+		#print("search_term returns geneids: \n", geneids)
+		return geneids 
 
 #for testing
 """
-
 terms = ['ig', 'Ig_2']
 geneids = [['badger','badger2','mushroom','mushroom2'], ['monkey','rat','boar','ox','moon']]
 transcripts = [[['bad','ger','bad','ger'],['bad2','ger2','bad2','ger2'],['snake','oh','snake'],['mush','room','mush','room']],\

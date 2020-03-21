@@ -1,6 +1,25 @@
 
 The Daily log
 -----------------
+03/21 
+
+I have worked on this code between now and 03/12, I just forgot to take notes. 
+In one week we've gone from somewhat normal to "oh shit, we're all locked down and shouldn't be around people"
+
+Todo:
+xClose browser windows after the program is done, and ideally while the modules are running
+Headless running, so no windows need to be opened to the eye
+Fix how the transcripts are being entered into the spreadsheet
+Test to see how well entering multiple search terms works. 
+If the search term isn't found, produce a not found message and continue
+
+
+
+03/12 
+Just a couple minutes before bed. :P 
+I forgot to document the issues before going to bed. 
+
+
 03/11
 Made a lot of progress, the excel module is splitting the geneid into separate letters, I think I've fixed this. 
 

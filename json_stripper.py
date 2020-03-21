@@ -5,45 +5,32 @@
 
 import json, requests, sys, pprint
 from selenium import webdriver
+import urllib.request, urllib
+import re
 
 def transcripts_data(url): 
 	# Download the JSON data from the Hydra Portal's API using a url and get the transcripts from it. 
 	browser = webdriver.Firefox()
-	 
-	print ("Json_stripper module")
-	transcripts =[]
+	print ('Json_stripper module\n')
+	transcripts =[0]
 	response = requests.get(url)
 	response.raise_for_status()
 
 	# Load JSON data into a Python variable.
 	transcripts_data = json.loads(response.text)
 	transcripts_text_file = transcripts_data['intervals']
-	#print("transcripts_text_file from transcripts_data")
-	#print (transcripts_text_file)
-	transcripts_info = (transcripts_text_file['nclist']) #
-
-	for nested_list in transcripts_info:
-		print ("nested list:", nested_list, "\n")
-		#This complicated selector is necessary because the dictionary is nested. 
-		if 't*' in nested_list: 
-			transcript = t*.split('|')[0] # I think I'm selecting the same thing again and again
-		print ("transcript:", transcript,"\n") 
-		transcripts.append(transcript) 
-
+	
+	#regex expression
+	pattern = re.compile('t\d+aep')
+	transcripts = set(pattern.findall(response.text))
+	
+	#print (transcripts)
 	browser.close()
+
 	return transcripts
 
+
 	
-"""
-	transcripts = [[['bad','ger','bad','ger'],['bad2','ger2','bad2','ger2'],['snake','oh','snake'],['mush','room','mush','room']],\
-			   [['bad','ger','bad','ger'],['bad2','ger2','bad2','ger2'],['snake','oh','snake'],['mush','room','mush','room']],\
-			   [['bad','ger','bad','ger'],['bad2','ger2','bad2','ger2'],['snake','oh','snake'],['mush','room','mush','room']],\
-			   [['bad','ger','bad','ger'],['bad2','ger2','bad2','ger2'],['snake','oh','snake'],['mush','room','mush','room']]]
-
-
-transcripts_data()
-"""
-
 	
 
  

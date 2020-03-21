@@ -9,13 +9,11 @@ import json, requests, sys, pprint
 
 def gb_link(geneid): 
 	'Takes a gene id and clicks through _View Gene in Genome Browser_ webpage to jbrowser'
-	print ("gb_link function\n")
+	
 	browser = webdriver.Firefox()
-
 	url = 'https://research.nhgri.nih.gov/hydra/genewiki/gene_page.cgi?gene=' + geneid
 	browser.get(url)
 	time.sleep(1)
-	print('View_gene page')
 
 	# Click the 'View Gene in Genome Browser link' - it seems to be the only way to get the correct json file
 	try:
@@ -24,10 +22,8 @@ def gb_link(geneid):
 	except:
 		print('Was not able to find View_gene_elem')
 
-	view_in_browser_page = browser.window_handles[0] # Not sure this will work
-	#browser.close()
-
-	###JBrowser page: window_second
+	view_in_browser_page = browser.window_handles[0] 
+	
 	jbrowser_page = browser.window_handles[1] # After clicking the result button, store the window handle variable of second page
 	browser.switch_to.window(jbrowser_page)
 
@@ -51,10 +47,8 @@ def gb_link(geneid):
 
 	time.sleep(1)
 	browser.close()
-
-	#print ("jbrowse_url")
-	print ("geneID")
-	print (short_geneid[0])
+	browser.switch_to.window(view_in_browser_page)
+	browser.close()
 	return jbrowse_url
 
 

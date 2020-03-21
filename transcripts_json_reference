@@ -2,26 +2,32 @@
 transcripts_text_file from transcripts_data
 
 {'nclist': 
-[[0, 19861, 46448, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 't37984aep|65624', 't37984aep|65624', 'gene.t37984aep|65624', 'mRNA', 
+[	
 
-[[1, 19861, 20176, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't37984aep|65624'], 
-[1, 20360, 20498, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't37984aep|65624'], 
-[1, 46257, 46448, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't37984aep|65624'], 
-[1, 19861, 20176, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't37984aep|65624'], 
-[1, 46257, 46448, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't37984aep|65624'], 
-[1, 20360, 20498, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't37984aep|65624']]], 
+[0, 19861, 46448, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 't37984aep|65624', 't37984aep|65624', 'gene.t37984aep|65624', 'mRNA', 
 
-[0, 89604, 100802, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 't12260aep|65616', 't12260aep|65616', 'gene.t12260aep|65616', 'mRNA', [[1, 100411, 100802, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't12260aep|65616'], 
-[1, 89604, 89797, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't12260aep|65616'], 
-[1, 89604, 89797, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't12260aep|65616'], 
-[1, 99975, 100113, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't12260aep|65616'], 
-[1, 99975, 100113, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't12260aep|65616'], 
-[1, 100411, 100802, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't12260aep|65616']], 
+[	[1, 19861, 20176, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't37984aep|65624'], 
+	[1, 20360, 20498, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't37984aep|65624'], 
+	[1, 46257, 46448, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't37984aep|65624'], 
+	[1, 19861, 20176, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't37984aep|65624'], 
+	[1, 46257, 46448, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't37984aep|65624'], 
+	[1, 20360, 20498, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't37984aep|65624']]], 
 
-{'Sublist': [[0, 91687, 91932, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 't30006aep|-65619', 't30006aep|-65619', 'gene.t30006aep|-65619', 'mRNA', [[1, 91687, 91932, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't30006aep|-65619'], 
-[1, 91687, 91932, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't30006aep|-65619']]], 
+[0, 89604, 100802, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 't12260aep|65616', 't12260aep|65616', 'gene.t12260aep|65616', 'mRNA', [	[1, 100411, 100802, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't12260aep|65616'], 
+	[1, 89604, 89797, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't12260aep|65616'], 
+	[1, 89604, 89797, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't12260aep|65616'], 
+	[1, 99975, 100113, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't12260aep|65616'], 
+	[1, 99975, 100113, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't12260aep|65616'], 
+	[1, 100411, 100802, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't12260aep|65616']], 
+
+{'Sublist': 
+[
+[0, 91687, 91932, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 't30006aep|-65619', 't30006aep|-65619', 'gene.t30006aep|-65619', 'mRNA', 
+[	[1, 91687, 91932, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't30006aep|-65619'], 
+	[1, 91687, 91932, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't30006aep|-65619']]], 
 [0, 95242, 95658, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 't36740aep|65623', 't36740aep|65623', 'gene.t36740aep|65623', 'mRNA', 
-[[1, 95242, 95658, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't36740aep|65623'], [1, 95242, 95658, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't36740aep|65623']]]]}]], 
+[	[1, 95242, 95658, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'CDS', 't36740aep|65623'], 
+	[1, 95242, 95658, 0, 'AEP_SPLIGN', 'Sc4wPfr_435', 'exon', 't36740aep|65623']]]]}]], 
 
 'classes': [{'isArrayAttr': {'Subfeatures': 1}, 
 'attributes': ['Start', 'End', 'Strand', 'Source', 'Seq_id', 'Load_id', 'Name', 'Parent_id', 'Type', 'Subfeatures']}, {'isArrayAttr': {}, 
@@ -31,11 +37,9 @@ transcripts_text_file from transcripts_data
 'urlTemplate': 'lf-{Chunk}.json', 
 'minStart': 19861}
 
-'''
-	for nested_list in transcripts_text_file:
-		print ("nested list:", nested_list "\n")
-		#This complicated selector is necessary because the dictionary is nested. 
-		transcript = (transcripts_text_file['nclist'][0][7]).split('|')[0] # I think I'm selecting the same thing again and again
-		print ("transcript:", transcript,"\n") 
-		transcripts.append(transcript) 
-'''
+
+DESIRED RESULT: 
+
+[t37984aep,t12260aep,t30006aep,t36740aep]
+
+
