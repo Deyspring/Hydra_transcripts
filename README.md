@@ -1,6 +1,32 @@
 
 The Daily log
 -----------------
+03/26
+I've been losing track of the days. Four days. Yeah. 
+
+XFormat spreadsheet 
+XLabel terms, geneids and transcripts
+XMake term label bold
+
+Research headless running. 
+-it would be useful so the screen could be used for other things while the program was running. 
+
+-Print something if the program isn't able to find something due to a slow loading issue. 
+
+Research UI and installation packaging. 
+
+
+
+
+
+03/22
+Testing of multiple search terms today. 
+If "done" and nothing else entered, exit the program 
+Some formatting of spreadsheet. 
+Headless running? Research this, it may mean running the program without visably opening up andy webpages. I'm not sure this is important, it might be useful for folks to see pages being opened and scraped. 
+Packaging to be delivered research
+UI research 
+
 03/21 
 
 I have worked on this code between now and 03/12, I just forgot to take notes. 
@@ -9,9 +35,14 @@ In one week we've gone from somewhat normal to "oh shit, we're all locked down a
 Todo:
 xClose browser windows after the program is done, and ideally while the modules are running
 Headless running, so no windows need to be opened to the eye
-Fix how the transcripts are being entered into the spreadsheet
-Test to see how well entering multiple search terms works. 
+xFix how the transcripts are being entered into the spreadsheet
+Test to see how well entering multiple search terms works. - it crashed when a null entry was put in, an entry with no results also crashed the program
 If the search term isn't found, produce a not found message and continue
+
+The program is roughly working, yay! 
+
+Headless running, bug testing, and packaging it up to deliver. UI interface would be nice too. 
+
 
 
 

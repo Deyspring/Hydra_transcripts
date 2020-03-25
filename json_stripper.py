@@ -5,12 +5,16 @@
 
 import json, requests, sys, pprint
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
 import urllib.request, urllib
 import re
 
 def transcripts_data(url): 
 	# Download the JSON data from the Hydra Portal's API using a url and get the transcripts from it. 
-	browser = webdriver.Firefox()
+	options = webdriver.FirefoxOptions()
+	options.add_argument('--headless')
+	browser = webdriver.Firefox(options= options)
+	
 	print ('Json_stripper module\n')
 	transcripts =[0]
 	response = requests.get(url)

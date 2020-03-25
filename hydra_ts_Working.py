@@ -10,6 +10,7 @@ import genome_browser_links
 import search_term 
 import json_stripper
 
+
 # Accept user input and return a list of terms 
 terms =[]
 term = None
@@ -19,6 +20,10 @@ while term != 'done':
 	term = input('Enter search term(s): ')
 	if term != 'done':
 		terms.append(term)
+	if term == 'done': 
+		if len(terms)== 0:
+			print('Hydra script is done')
+			quit()
 	else: 
 		pass
 

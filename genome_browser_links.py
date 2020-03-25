@@ -1,21 +1,29 @@
 #!python
 # genome_browser_links
+#Takes a gene id and clicks through _View Gene in Genome Browser_ webpage to jbrowser'
+#Use headless browsing so webpages being clicked on do not visibly open on desktop'
 # This module is necessary because a link is generated here with an gene id extenstion I 
 # can't figure out. So, the link on this page just has to be clicked. :P 
 
 import time
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
 import json, requests, sys, pprint
+
+
+	#Open Hydra webportal
 
 def gb_link(geneid): 
 	'Takes a gene id and clicks through _View Gene in Genome Browser_ webpage to jbrowser'
 	
-	browser = webdriver.Firefox()
+	options = webdriver.FirefoxOptions()
+	options.add_argument('--headless')
+	browser = webdriver.Firefox(options= options)
 	url = 'https://research.nhgri.nih.gov/hydra/genewiki/gene_page.cgi?gene=' + geneid
 	browser.get(url)
 	time.sleep(1)
 
-	# Click the 'View Gene in Genome Browser link' - it seems to be the only way to get the correct json file
+	#Click the 'View Gene in Genome Browser link' - it seems to be the only way to get the correct json file
 	try:
 		link_to_genome = browser.find_element_by_link_text('View Gene in Genome Browser').click()
 		print ('Found View_gene_elem with that xpath')
@@ -38,6 +46,7 @@ def gb_link(geneid):
 		print ('Found JulianoCheckbox')	
 	except:
 		print('Was not able to find JulianoCheckbox')
+		print('May need to increase time.sleep to allow browser to load completely')
  
 	browser.refresh()
 

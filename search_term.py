@@ -4,13 +4,18 @@
 
 import time
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
+
 
 def search_geneid(terms): 
 	'''Input a search term and return a geneid'''
 	# use Ig_4 to test 
 
+	options = webdriver.FirefoxOptions()
+	options.add_argument('--headless')
+
 	#Open Hydra webportal
-	browser = webdriver.Firefox()
+	browser = webdriver.Firefox(options=options)
 	browser.get('https://research.nhgri.nih.gov/hydra/pfam/')
 	
 	# Find the keyword field and enter the term 
@@ -50,9 +55,11 @@ def search_geneid(terms):
 		#print("search_term returns geneids: \n", geneids)
 		return geneids 
 
-#for testing
-"""
-terms = ['ig', 'Ig_2']
+
+# Data for testing purposes
+'''
+terms = ['ig_4', 'Ig_2']
+#terms = ['ig_4', 'Ig_2']
 geneids = [['badger','badger2','mushroom','mushroom2'], ['monkey','rat','boar','ox','moon']]
 transcripts = [[['bad','ger','bad','ger'],['bad2','ger2','bad2','ger2'],['snake','oh','snake'],['mush','room','mush','room']],\
 			   [['bad','ger','bad','ger'],['bad2','ger2','bad2','ger2'],['snake','oh','snake'],['mush','room','mush','room']],\
@@ -60,7 +67,9 @@ transcripts = [[['bad','ger','bad','ger'],['bad2','ger2','bad2','ger2'],['snake'
 			   [['bad','ger','bad','ger'],['bad2','ger2','bad2','ger2'],['snake','oh','snake'],['mush','room','mush','room']]]
 
 search_geneid(terms)
-"""
+'''
+
+
 
 
 
