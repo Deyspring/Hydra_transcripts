@@ -44,7 +44,3 @@ print("hydra_ts transripts:\n", transcripts)
 
 #Put all terms, geneids and transcripts into an excel file
 manage_excel.mng_xl(terms, geneids, transcripts)
-
-#Give indication that progam is complete while testing
-#remove when done
-print ('Complete')

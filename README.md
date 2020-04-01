@@ -1,6 +1,28 @@
 
 The Daily log
 -----------------
+03/31
+Do. not. feel. ew..
+Diareha, slightly warm, slight sore throat. Not enough soup. :P 
+Still have a snese of smell though. 
+
+The zip function is the source of the spreadsheet fill silliness. 
+I'm trying to figure out how to loop things.... mh. Maybe I need to loop the iterables together first and then pass them out to the spreadsheet.
+
+I also asked the slack about taking this project and bundling it in some way to make it easy to install and use. 
+
+
+03/27
+Hey today is Friday! Lookit that. 
+
+Wasn't able to fix the spreadsheet bug yesterday. I'm pretty sure I fixed it before and the test of the module by itself was working. I'll test the module again, just in case and see if I can track this bug down. :P 
+
+I researched packaging this up for easy installation and ran into a couple issues. 
+Callen's using a Windows machine, I'm using a mac. That's the first of many issues, it looks like a difficult problem. 
+
+I'll research UI for this program as well. It would be good to look into UI programming before packaging it up. I'm not sure if I can make it universal. It may make the most sense to turn it into a webtool. 
+
+
 03/26
 I've been losing track of the days. Four days. Yeah. 
 
@@ -8,10 +30,13 @@ XFormat spreadsheet
 XLabel terms, geneids and transcripts
 XMake term label bold
 
-Research headless running. 
--it would be useful so the screen could be used for other things while the program was running. 
+XResearch headless running. 
+it would be useful so the screen could be used for other things while the program was running. 
+XHeadless running operational
 
--Print something if the program isn't able to find something due to a slow loading issue. 
+XPrint something if the program isn't able to find something due to a slow loading issue. 
+
+Bug: Enter items into spreadsheet properly, they are stretched out and letter by letter again
 
 Research UI and installation packaging. 
 

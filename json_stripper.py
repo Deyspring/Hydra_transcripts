@@ -14,8 +14,7 @@ def transcripts_data(url):
 	options = webdriver.FirefoxOptions()
 	options.add_argument('--headless')
 	browser = webdriver.Firefox(options= options)
-	
-	print ('Json_stripper module\n')
+
 	transcripts =[0]
 	response = requests.get(url)
 	response.raise_for_status()
