@@ -1,6 +1,14 @@
 
 The Daily log
 -----------------
+04/03 
+
+Huh. It's friday. I spent a little time on the manage_xl module problem. Using Zip to group the iterables together properly was the right answer, I just needed to put some conditionals in the script to let it know when to _not_ zip when there were one or fewer terms. The point of the zipping was to combine the terms, geneids and transcripts correctly, but that only works when all the iterables are lists and sets and not single word strings. 
+
+It would be a good idea to roll back the manage_excel and create a function for the term header on the spreadsheet. 
+
+
+
 03/31
 Do. not. feel. ew..
 Diareha, slightly warm, slight sore throat. Not enough soup. :P 
