@@ -18,29 +18,6 @@ def mng_xl(terms, geneid_lists, transcript_sets):
 	web_address = 'https://research.nhgri.nih.gov/hydra/pfam/'
 	datestamp = time.strftime("%Y-%m-%d %H:%M")
 
-"""
-	def term_header(col_num,row_num,term)
- 
-			# Search terms should start at cell A7, row 
-			print("term:",term)
-
-			col_num = 1
-			row_num += 2
-			sheet.cell(row=row_num, column=col_num).font = term_style
-			sheet.cell(row=row_num, column=col_num).value = "TERM"
-			row_num += 1
-			sheet.cell(row=row_num, column=col_num).font = term_sub_style
-			sheet.cell(row=row_num, column=col_num).value = term
-
-			row_num += 1
-			sheet.cell(row=row_num, column=col_num).font = geneid_style
-			sheet.cell(row=row_num, column=col_num).value = "Geneids"
-			col_num +=1
-			sheet.cell(row=row_num, column=col_num).font = transcript_style
-			sheet.cell(row=row_num, column=col_num).value = "transcripts"
-			col_num -=1 
-"""
-
 	title = title.replace(' ','')
 	wb = openpyxl.Workbook() # Create a blank workbook
 	wb.sheetnames # It starts with one sheet
@@ -66,19 +43,48 @@ def mng_xl(terms, geneid_lists, transcript_sets):
 	row_num = 6
 	col_num = 1
 
+	row_num += 2
+	sheet.cell(row=row_num, column=col_num).font = term_style
+	sheet.cell(row=row_num, column=col_num).value = "TERM"
+
 	print("manage_excel\n")
 
 
-	if len(terms) < 1 :
+	if len(terms) <= 1:
+		print("one term:",terms)
+		term = str(terms)
 
-		for term in terms: 
+		row_num += 1
+		sheet.cell(row=row_num, column=col_num).font = term_sub_style
+		sheet.cell(row=row_num, column=col_num).value = term
+
+		row_num += 1
+		sheet.cell(row=row_num, column=col_num).font = geneid_style
+		sheet.cell(row=row_num, column=col_num).value = "Geneids"
+		col_num +=1
+		sheet.cell(row=row_num, column=col_num).font = transcript_style
+		sheet.cell(row=row_num, column=col_num).value = "transcripts"
+		col_num -=1 
+
+		for geneid, transcripts in zip(geneid_lists, transcript_sets):
+				print("geneid: ", geneid)
+				row_num += 1
+				col_num = 1
+				sheet.cell(row=row_num, column=col_num).value = geneid
+			
+				for transcript in transcripts: 
+					print("transcript:", transcript)
+					col_num +=1
+					sheet.cell(row=row_num, column=col_num).value = transcript
+
+	else: 
+
+		for term, geneid_list, transcript_set in zip(terms, geneid_lists, transcript_sets): 
 			# Search terms should start at cell A7, row 
-			print("term:",term)
+			print("multiple terms:", term )
+			print(type(term))
 
 			col_num = 1
-			row_num += 2
-			sheet.cell(row=row_num, column=col_num).font = term_style
-			sheet.cell(row=row_num, column=col_num).value = "TERM"
 			row_num += 1
 			sheet.cell(row=row_num, column=col_num).font = term_sub_style
 			sheet.cell(row=row_num, column=col_num).value = term
@@ -91,23 +97,17 @@ def mng_xl(terms, geneid_lists, transcript_sets):
 			sheet.cell(row=row_num, column=col_num).value = "transcripts"
 			col_num -=1 
 
-			for geneids in geneid_lists:
-				print("geneids: ", geneids)
-				for geneid in geneids:
-					print ("geneid:", geneid)
-					row_num += 1
-					col_num = 1
-					sheet.cell(row=row_num, column=col_num).value = geneid
+			for geneid, transcripts in zip(geneid_list, transcript_set):
+				print("geneid: ", geneid)
+				row_num += 1
+				col_num = 1
+				sheet.cell(row=row_num, column=col_num).value = geneid
 			
-					transcript_set = transcript_sets[trn_num]
-					print("transcript_set ",trn_num,":", transcript_set)
-					for transcripts in transcript_set:
+				for transcript in transcripts: 
+					print("transcript:", transcript)
+					col_num +=1
+					sheet.cell(row=row_num, column=col_num).value = transcript
 
-						print("transcripts: ", transcripts)
-						for transcript in transcripts: 
-							print("transcript:", transcript)
-							col_num +=1
-							sheet.cell(row=row_num, column=col_num).value = transcript
 	
 
 	wb.save( title+'_'+ datestamp+'.xlsx' ) # Save the workbook.
@@ -115,26 +115,25 @@ def mng_xl(terms, geneid_lists, transcript_sets):
 
 	print('saved workbook\n')
 
-#Data produced by the other modules, which is correct
-#When I use this data as a test case for the module, it does odd things. 
+#Test data 
 """
 terms = ['Ig_4'] 
 geneids = ['Sc4wPfr_172.1.g1567.t1', 'Sc4wPfr_435.1.g6986.t1', 'Sc4wPfr_274.1.g13601.t1', 'Sc4wPfr_172.2.g23178.t1', 'Sc4wPfr_268.g25749.t1', 'Sc4wPfr_268.g25754.t2', 'Sc4wPfr_268.g25749.t2', 'Sc4wPfr_268.g25754.t1'] 
-transcripts = [{'t18444aep', 't20351aep', 't1128aep', 't19864aep', 't34681aep', 't27955aep', 't5766aep', 't14414aep', 't22661aep', 't9044aep', 't12064aep', 't11261aep', 't22011aep'}, 
+transcripts = [{'t18444aep', 't20351aep', 't1128aep', 't19864aep', 't34681aep' }, 
 			   {'t36740aep', 't12260aep', 't30006aep', 't37984aep'}, 
 			   {'t30122aep', 't297aep'}, 
-			   {'t18444aep', 't20351aep', 't1128aep', 't19864aep', 't34681aep', 't27955aep', 't5766aep', 't14414aep', 't22661aep', 't9044aep', 't12064aep', 't11261aep', 't22011aep'}, 
-			   {'t24725aep', 't27640aep', 't2308aep', 't31900aep', 't21629aep', 't12602aep', 't14827aep', 't23311aep', 't3984aep', 't27276aep', 't4494aep', 't13463aep', 't18097aep', 't36467aep', 't18096aep', 't23522aep', 't15944aep', 't26172aep', 't24866aep', 't20881aep', 't15548aep', 't439aep', 't14058aep', 't21081aep', 't1197aep'}, 
-			   {'t24725aep', 't27640aep', 't2308aep', 't31900aep', 't21629aep', 't12602aep', 't14827aep', 't23311aep', 't3984aep', 't27276aep', 't4494aep', 't13463aep', 't18097aep', 't36467aep', 't18096aep', 't23522aep', 't15944aep', 't26172aep', 't24866aep', 't20881aep', 't15548aep', 't439aep', 't14058aep', 't21081aep', 't1197aep'}, 
-			   {'t24725aep', 't27640aep', 't2308aep', 't31900aep', 't21629aep', 't12602aep', 't14827aep', 't23311aep', 't3984aep', 't27276aep', 't4494aep', 't13463aep', 't18097aep', 't36467aep', 't18096aep', 't23522aep', 't15944aep', 't26172aep', 't24866aep', 't20881aep', 't15548aep', 't439aep', 't14058aep', 't21081aep', 't1197aep'}, 
+			   {'t18444aep', 't20351aep', 't1128aep', 't19864aep', 't9044aep', 't22011aep'}, 
+			   {'t24725aep', 't27640aep', 't2308aep', 't31900aep', 't21629aep', 't15944aep', 't14058aep', 't21081aep', 't1197aep'}, 
+			   {'t24725aep', 't27640aep', 't2308aep', 't31900aep', 't21629aep', 't12602aep', 't3984aep', 't27276aep', 't4494aep', 't13463aep', 't18097aep', 't36467aep', 't18096aep', 't23522aep', 't15944aep', 't26172aep', 't24866aep', 't20881aep', 't15548aep', 't439aep', 't14058aep', 't21081aep', 't1197aep'}, 
+			   {'t24725aep', 't27276aep', 't15944aep', 't26172aep', 't24866aep', 't20881aep', 't15548aep', 't439aep', 't14058aep', 't21081aep', 't1197aep'}, 
 			   {'t24725aep', 't27640aep', 't2308aep', 't31900aep', 't21629aep', 't12602aep', 't14827aep', 't23311aep', 't3984aep', 't27276aep', 't4494aep', 't13463aep', 't18097aep', 't36467aep', 't18096aep', 't23522aep', 't15944aep', 't26172aep', 't24866aep', 't20881aep', 't15548aep', 't439aep', 't14058aep', 't21081aep', 't1197aep'}]
-
-
-# The data below produces a perfect spreadsheet when the module is run. 
-#However, if the structure of the lists changes, the spreadsheet is formatted incorrectly. 
+"""
 """
 terms = ['term1','term2']
 geneids = ['1_1','1_2','1_3','1_4'],['2_1','2_2','2_3','2_4']
 transcripts = [{'111','112','1113','1114'},{'2111','2112','2113','2114'},{'3111','3112','3114'},{'4111','4112','41113','4114'}],[{'000000000','term2_gene1_tr2','term2_gene1_tr3','term2_gene1_tr4'},{'##############','term2_gene2_tr2','term2_gene2_tr3','term2_gene2_tr4'},{'MMMMMMMMMMMMM','term2_gene3_tr2','term2_gene3_tr3'},{'term2_gene4_tr1','term2_gene4_tr2','term2_gene4_tr3','term2_gene4_tr'}]
 
+
 mng_xl(terms,geneids,transcripts)
+
+"""

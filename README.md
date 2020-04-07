@@ -1,6 +1,12 @@
 
 The Daily log
 -----------------
+04/06 
+Monday. 
+I got the manage_xl script working. It's not as pretty as I'd like, but I'm getting tired of this project and just want to finish it now. 
+
+Batch file to get the thing installed quickly on Callen's end. I'll bundle it up and send it to Karen. 
+
 04/03 
 
 Huh. It's friday. I spent a little time on the manage_xl module problem. Using Zip to group the iterables together properly was the right answer, I just needed to put some conditionals in the script to let it know when to _not_ zip when there were one or fewer terms. The point of the zipping was to combine the terms, geneids and transcripts correctly, but that only works when all the iterables are lists and sets and not single word strings. 
