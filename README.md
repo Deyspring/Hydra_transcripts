@@ -5,6 +5,10 @@ The Daily log
 Monday. 
 I got the manage_xl script working. It's not as pretty as I'd like, but I'm getting tired of this project and just want to finish it now. 
 
+Ask where to save exel files. 
+format exel file to fit data. 
+Make sure script is getting the correct information 
+
 Batch file to get the thing installed quickly on Callen's end. I'll bundle it up and send it to Karen. 
 
 04/03 
