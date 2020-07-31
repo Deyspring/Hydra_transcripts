@@ -1,6 +1,69 @@
 
 The Daily log
 -----------------
+07/31/2020
+Almost managed to not check the news today. Let's see if I can make this the only time. No Ann Friedman either. 
+I'm having problems with my computer and will have to wipe it and reinstall everything. I really don't want to do this, so I'm putting it off until the weekend, probably after Python in the morning. 
+
+I made great progress yesterday, I got everything working and managed to speed up the script. My code was starting up Firefox multiple times to get the links. Passing the browser variable to all the modules sped things up beautifully. Because the computer is foobared, I made a copy of the working code while I continue to optimize what I have and improve other bits to make the code more professional. 
+
+07/30/2020
+Oh yeah, I have to pay rent. My lungs hurt today, I've been having trouble breathing. I can't keep talking to Sally for 45+ daily. It's neat to talk with her, but we both need to get things done. 
+
+I circled back around to the requirments and install packages. I need to track down why the script isn't finding the proper website and for the love of god, fix the length of time it takes to load up all the Json urls. 
+
+Yay!!! It's working solidly. I have not written test cases for it, so I consider it to be fragile still. I'm going to see if I can save it to my Git repo and then I'll do the BeeWare tutorial to see if I can get this thing packaged up in a user friendly way. 
+
+#For Mac
+#homebrew == brew is not a package, it can't be installed easily  
+#brew install geckodriver
+# I installed geckodriver with brew, but this won't work for prepackaging. 
+
+
+#There is an easy way to install Geckodriver:
+#Install webdrivermanager with pip
+#pip install webdrivermanager
+
+#Install the driver for Firefox and Chrome
+#webdrivermanager firefox chrome --linkpath /usr/local/bin
+
+#Or install the driver only for Firefox
+#webdrivermanager firefox --linkpath /usr/local/bin
+
+#Or install the driver only for Chrome
+#webdrivermanager chrome --linkpath /usr/local/bin
+
+
+#Use this for PC 
+#from selenium import webdriver
+#from webdriver_manager.firefox import GeckoDriverManager
+
+
+So, yay. The requirments.txt file is installing everything well and I might not need to use the additional_requirements.sh script. It's nice to know how to make a script file now though. 
+
+This is the message I got when I ran the script: 
+/Users/katherinedey/Pictures/Code/GitHub/Hydra_transcripts/addtional_requirements.sh 
+Downloading WebDriver for browser: "firefox"
+1835kb [00:00, 2051.50kb/s]                                                                                                                                                 
+Symlink target /usr/local/bin/geckodriver already exists and will be overwritten.
+Driver binary downloaded to: "/Users/katherinedey/Pictures/Code/GitHub/Hydra_transcripts/hyvenv/WebDriverManager/gecko/v0.27.0/geckodriver-v0.27.0-macos/geckodriver"
+Symlink created: /usr/local/bin/geckodriver
+
+So, genome_browser_links is badly constructed in that Firefox has to be loaded everytime a new link is needed. Firefox should be opened only once and the pages should be opened and closed after Firefox is loaded. I seem to recall having an issue with opening the browser pages correctly and that's why I left the function as it was. It needs to be fixed. This program is running so. slow. 
+
+
+
+07/29/2020
+
+So it's been a wild four months. I was furloughed, with no anticipation of getting rehired. Good, I didn't like that job and now I don't have to quit or get fired. 
+I caught Corona, I'm pretty sure that I did. If it wasn't such a pain to get tested for antibodies, I'd do it to make sure. 
+
+MEANWHILE, I discovered BeeWare. I'm hoping it will make the packaging process easier. Onward. 
+
+Figure out what packages, etc. are required to run this program and put them into the requirements folder. Fix the 04/06 things. Get it to run, I moved the folder and everything broke. I deliberately deleted the virtual environment to see what requirements popped up that need to be installed. 
+
+Did not get far today, just refamiliarizing myself with the code. I need to set up a pass around the url that can't be found. It is probably there, but something is causing it to not show up. I'm going to try and get everything working with some tests and then come back to the url problem
+
 04/06 
 Monday. 
 I got the manage_xl script working. It's not as pretty as I'd like, but I'm getting tired of this project and just want to finish it now. 

@@ -2,9 +2,24 @@
 Hydra project -Alpha version 
 ########################################################
 
-This project runs a script that can accept multiple search terms. 
-A spreadsheet with a list of those terms and their resulting genes
-and the transcripts of those genes is produced. 
+The Hydra project can accept one or multiple search terms. 
+After providing the search terms, a spreadsheet with a list 
+of the provided terms and their associate genes and transcripts is produced. 
+This spreadsheet is placed in a folder. 
+
+
+Start a virtual environment using Conda to test this environment, this project is not completed yet. 
+Virtual environment creation command: 
+conda create -n hyenv
+conda activate hyenv
+conda deactivate 
+
+
+Check to see if Geckodriver is on the path: 
+echo $PATH
+
+Check to see what packages are installed: 
+conda list
 
 Notes: 
 This program requires py2exe to be installed on your Windows machine. 

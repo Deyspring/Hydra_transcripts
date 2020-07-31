@@ -1,0 +1,17 @@
+README
+
+
+
+This script automates the button presses and searches necessary to get the code Callen wants. 
+Unit based testing!!! write the tests first this time
+
+Install PyAutoGUI Module
+-=====================-
+
+On Windows, there are no other modules to install.
+
+On OS X, run sudo pip3 install pyobjc-framework-Quartz, sudo pip3 install pyobjc-core, and then sudo pip3 install pyobjc.
+
+On Linux, run sudo pip3 install python3-xlib, sudo apt-get install scrot, sudo apt-get install python3-tk, and sudo apt-get install python3-dev. (Scrot is a screenshot program that PyAutoGUI uses.)
+
+After these dependencies are installed, run pip install pyautogui (or pip3 on OS X and Linux) to install PyAutoGUI.

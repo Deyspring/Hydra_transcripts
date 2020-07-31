@@ -7,16 +7,12 @@ from selenium import webdriver
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
 
-def search_geneid(terms): 
+def search_geneid(terms,browser): 
 	'''Input a search term and return a geneid'''
-	# use Ig_4 to test 
+	# Input(list)
+	# Return(list)
 
-	options = webdriver.FirefoxOptions()
-	options.add_argument('--headless')
-
-	#Open Hydra webportal
-	browser = webdriver.Firefox(options=options)
-	browser.get('https://research.nhgri.nih.gov/hydra/pfam/')
+	print ('using search_geneid')
 	
 	# Find the keyword field and enter the term 
 	keyword_box = '//div[3]/form/table[4]/tbody/tr[2]/td[5]/input[1]'
@@ -50,8 +46,6 @@ def search_geneid(terms):
 			geneid = link.text
 			geneids.append((geneid.split("="))[0]) # split the geneid to provide id to make gene sequence page url 
 			
-		#time.sleep(1) 
-		browser.close()
 		#print("search_term returns geneids: \n", geneids)
 		return geneids 
 

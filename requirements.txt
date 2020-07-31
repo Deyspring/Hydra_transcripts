@@ -1,0 +1,22 @@
+
+# all of these are for Mac environment using pip and homebrew
+# Install required packages and extensions by typing this at the command line: 
+# pip install -r requirements.txt
+
+# Firefox installation required 
+# Homebrew installation required? to install geckodriver
+# May need alternate way to install geckodriver without homebrew for Windows
+# Geckodriver installation required. Geckodriver 0.27.0
+# brew install geckodriver 
+
+
+
+conda ==4.3.13
+selenium ==3.141.0   
+openpyxl ==3.0.4  
+webdrivermanager == 0.8.0
+
+
+
+
+
