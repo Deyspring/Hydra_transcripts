@@ -5,14 +5,9 @@ import openpyxl
 from openpyxl.styles import Font
 import time
 
-#if __name__ == '__main__': #not sure what to name instead of _main_ for clarity 
- 
-# main()
-
 def mng_xl(terms, geneid_lists, transcript_sets): 
 	'''Excel file with a title based on a website and the date'''
 
-	#TODO? make these names and link changable in a gui? 
 	title = 'Pfam_Domains'   
 	subtitle = 'Pfam domains in predicted Hydra proteins'
 	web_address = 'https://research.nhgri.nih.gov/hydra/pfam/'
@@ -110,10 +105,10 @@ def mng_xl(terms, geneid_lists, transcript_sets):
 
 	
 
-	wb.save( title+'_'+ datestamp+'.xlsx' ) # Save the workbook.
+	wb.save( title+'_'+ datestamp+'.xlsx' ) 
 	file_name = (title+'_'+datestamp+'.xlsx')
 
-	print('saved workbook\n')
+	print('saved spreadsheet file\n')
 
 #Test data 
 """
