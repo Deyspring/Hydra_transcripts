@@ -1,6 +1,31 @@
 
 The Daily log
 -----------------
+08/04/2020
+I am being lazy and slow today. I haven't gotten much done, I haven't even done some yoga or a nice long walk. I haven't tried to stop myself from reading the news. Basically, I've eaten, had a call from the Job club and have done the GID group at 12:30. I didn't sleep well last night, but meh. I can overcome that to some degree. I'd really like caffeine now, but that's not going to happen. I'd like to see if I can get the hydra project to work with briefcase today. If I can, I'll shoot a message off to Callen and let her know that she should see something by the end of the week. 
+
+Beeware tutorial finished. 
+Time to make the Hydra project work with Beeware. 
+0. Git everything
+1. create project folder and activate virtual environment
+2. Install briefcase in venv and bootstrap "briefcase new"
+3. Check to see that new app is working with no modifications
+4. Hard part: 
+    Alter 'hydra_return_transcripts.py' file. a lot. 
+    z. create window, column
+    a. create terms.label widget 
+    b. create terms input widget (form field) 
+      - separate terms with commas? enter each one in one by one and press button each time? 
+      - do last for now, add ability to load lots of terms at once later. 
+    c. "done" button widget
+    d. Add terms box and button widget to main method
+    e. link other methods to button widget - this is called a handler method that is called whenever the button is pressed. 
+    d. enter all these terms into appropriate method. 
+    e. Does beeware work with multiple methods? find out. 
+
+I think that's enough for today. If I finish it, the next thing will be the packaging and distribution tests. 
+
+
 08/3/2020
 Checked the news today, but it will be the last time. I need to reformat my computer today, I've been putting it off. 
 
