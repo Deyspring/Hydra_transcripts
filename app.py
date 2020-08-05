@@ -7,6 +7,7 @@ portal and returns a set of transcripts for each one that are saved to an excel 
 import toga
 from toga.style import Pack
 from toga.style.pack import COLUMN, ROW
+import hydra_fetch
 
 
 class hydra(toga.App):
