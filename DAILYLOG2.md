@@ -6,24 +6,41 @@ I am being lazy and slow today. I haven't gotten much done, I haven't even done 
 
 Beeware tutorial finished. 
 Time to make the Hydra project work with Beeware. 
-0. Git everything
-1. create project folder and activate virtual environment
-2. Install briefcase in venv and bootstrap "briefcase new"
-3. Check to see that new app is working with no modifications
+0. Git everything x
+1. create project folder and activate virtual environment x
+2. Install briefcase in venv and bootstrap "briefcase new" x
+3. Check to see that new app is working with no modifications x
 4. Hard part: 
-    Alter 'hydra_return_transcripts.py' file. a lot. 
-    z. create window, column
-    a. create terms.label widget 
-    b. create terms input widget (form field) 
-      - separate terms with commas? enter each one in one by one and press button each time? 
+    Alter 'hydra_return_transcripts.py' file. a lot.  x
+    z. create window, column x
+    a. create terms.label widget  x
+    b. create terms input widget (form field)  x
+      - separate terms with commas? enter each one in one by one and press button each time? x
+       - very easy to do this, but I need to clear the input field. 
       - do last for now, add ability to load lots of terms at once later. 
-    c. "done" button widget
-    d. Add terms box and button widget to main method
-    e. link other methods to button widget - this is called a handler method that is called whenever the button is pressed. 
+    c. "done" button widget x
+    d. Add terms box and button widget to main method x
+    e. link other methods to button widget - this is called a handler method that is called whenever the button is pressed. x
     d. enter all these terms into appropriate method. 
     e. Does beeware work with multiple methods? find out. 
 
 I think that's enough for today. If I finish it, the next thing will be the packaging and distribution tests. 
+
+Ack. I just realized I must grab all the info from the MIT site that I can before I'm kicked out tomorrow. Next time I'll get a certificate and get to take the tests. Next time. 
+
+Meanwhile...
+
+I made excellent progress porting the project to beeware. Tasks for tomorrow: 
+
+1. Clear the input box so multiple terms can be entered
+2. get self.terms from input to hydra_fetch function. why can't I pass variables to it? 
+3. why am I putting everything inside a class? Is that a good idea? 
+4. if it is a good idea, change all functions to have self variables. 
+5. Why do some things need self variables and some things do not? I think I can figure out this one, but I need to mull over it. 
+6. Add info dialogs to each function. This would be nice to have as it takes forever to run. 
+7. I may be able to add a "where do you want spreadsheet" widget to the app. look into it. yay. 
+
+
 
 
 08/3/2020
